@@ -104,16 +104,32 @@ class Grid(QtGui.QWidget):
         grid.addWidget(self.rb4, 0, 4)
 
         # profielvakken
-        self.cb1 = QtGui.QCheckBox("Fa")
-        self.cb2 = QtGui.QCheckBox("Du")
-        self.cb3 = QtGui.QCheckBox("WA")
-        self.cb4 = QtGui.QCheckBox("WB")
-        self.lblGs = QtGui.QLabel("Gs")
+            # CM
+        self.rbCMFa = QtGui.QRadioButton("Fa")
+        self.rbCMDu = QtGui.QRadioButton("Du")
+        self.lblCMGs = QtGui.QLabel("Gs")
+            # EM
+        self.rbEMWA = QtGui.QRadioButton("WA")
+        self.rbEMWB = QtGui.QRadioButton("WB")
+        self.lblEMEc = QtGui.QLabel("Ec")
+        self.lblEMGs = QtGui.QLabel("Gs")
+            # NG
+        self.rbNGWA = QtGui.QRadioButton("WA")
+        self.rbNGWB = QtGui.QRadioButton("WB")
+        self.lblNGBi = QtGui.QLabel("Bi")
+        self.lblNGSk = QtGui.QLabel("Sk")
+            # NT
+        self.lblNTWB = QtGui.QLabel("WB")
+        self.lblNTNa = QtGui.QLabel("Na")
+        self.lblNTSk = QtGui.QLabel("Sk")
+        # CM
+        nr_gr_CM = QtGui.QButtonGroup(self)
+        nr_gr_CM.addButton(self.rbCMFa, 1)
+        nr_gr_CM.addButton(self.rbCMDu, 2)
+        grid.addWidget(self.lblCMGs, 2,1)
+        hboxCM = QtGui.QHBoxLayout(self)
+        hboxCM.addWidget(self.rbCMFa)
 
-        nr_gr_2 = QtGui.QButtonGroup(self)
-        nr_gr_2.addButton(self.cb1, 1)
-        nr_gr_2.addButton(self.cb2, 1)
-        grid.addWidget(self.lblGs, 2,1)
 
         nr_gr_3 = QtGui.QButtonGroup()
 
