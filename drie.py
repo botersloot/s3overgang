@@ -129,16 +129,31 @@ class Grid(QtGui.QWidget):
         grid.addWidget(self.lblCMGs, 2,1)
         hboxCM = QtGui.QHBoxLayout(self)
         hboxCM.addWidget(self.rbCMFa)
+        hboxCM.addWidget(self.rbCMDu)
+        grid.addLayout(hboxCM, 2,1)
+
+        # EM
+        nr_gr_EM = QtGui.QButtonGroup(self)
+        nr_gr_EM.addButton(self.rbEMWA, 1)
+        nr_gr_EM.addButton(self.rbEMWB, 2)
+        grid.addWidget(self.lblEMEc, 2,2)
+        grid.addWidget(self.lblEMGs, 2,2)
+        hboxEM = QtGui.QHBoxLayout(self)
+        hboxEM.addWidget(self.lblEMEc)
+        hboxEM.addWidget(self.lblEMGs)
+        grid.addLayout(hboxCM, 2,2)
+
+
 
 
         nr_gr_3 = QtGui.QButtonGroup()
 
-        hbox1 = QtGui.QHBoxLayout(self)
-        hbox1.addWidget(self.cb1)
-        hbox1.addWidget(self.cb2)
-        hbox1.addWidget(self.cb3)
-        hbox1.addWidget(self.cb4)
-        grid.addLayout(hbox1, 2, 1)
+        # hbox1 = QtGui.QHBoxLayout(self)
+        # hbox1.addWidget(self.cb1)
+        # hbox1.addWidget(self.cb2)
+        # hbox1.addWidget(self.cb3)
+        # hbox1.addWidget(self.cb4)
+        # grid.addLayout(hbox1, 2, 1)
 
         self.setLayout(grid)
 
