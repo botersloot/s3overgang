@@ -87,6 +87,7 @@ class Grid(QtGui.QWidget):
         grid.addWidget(self.label8, 1, 3)
         grid.addWidget(self.label9, 1, 4)
 
+        # profielen
         self.rb1 = QtGui.QRadioButton("CM")
         self.rb2 = QtGui.QRadioButton("EM")
         self.rb3 = QtGui.QRadioButton("NG")
@@ -102,16 +103,25 @@ class Grid(QtGui.QWidget):
         grid.addWidget(self.rb3, 0, 3)
         grid.addWidget(self.rb4, 0, 4)
 
-        self.rb5 = QtGui.QRadioButton("Fa")
-        self.rb6 = QtGui.QRadioButton("Du")
+        # profielvakken
+        self.cb1 = QtGui.QCheckBox("Fa")
+        self.cb2 = QtGui.QCheckBox("Du")
+        self.cb3 = QtGui.QCheckBox("WA")
+        self.cb4 = QtGui.QCheckBox("WB")
+        self.lblGs = QtGui.QLabel("Gs")
 
         nr_gr_2 = QtGui.QButtonGroup(self)
-        nr_gr_2.addButton(self.rb5, 1)
-        nr_gr_2.addButton(self.rb6, 2)
+        nr_gr_2.addButton(self.cb1, 1)
+        nr_gr_2.addButton(self.cb2, 1)
+        grid.addWidget(self.lblGs, 2,1)
+
+        nr_gr_3 = QtGui.QButtonGroup()
 
         hbox1 = QtGui.QHBoxLayout(self)
-        hbox1.addWidget(self.rb5)
-        hbox1.addWidget(self.rb6)
+        hbox1.addWidget(self.cb1)
+        hbox1.addWidget(self.cb2)
+        hbox1.addWidget(self.cb3)
+        hbox1.addWidget(self.cb4)
         grid.addLayout(hbox1, 2, 1)
 
         self.setLayout(grid)
