@@ -1,7 +1,6 @@
 import sys, time
 from PyQt4 import QtGui
 from twee import venster
-from drie import Third
 resx = 600
 resy = 400
 # bovenstaande dingen niet aanraken pls

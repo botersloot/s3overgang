@@ -22,35 +22,41 @@ class venster(QtGui.QMainWindow):
     # het creeren van de GUI gaat altijd via initUI()
     def initUI(self):
 
-        self.btnVolgende = QtGui.QPushButton('Volgende', self)
-        self.btnVolgende.resize(self.btnVolgende.sizeHint()) # schat grootte knop en pas die toe
-        self.btnVolgende.move(450, 350)
-        self.btnVolgende.clicked.connect(self.hideTwee)
-        self.btnVolgende.clicked.connect(self.showDrie)
-
-
-
+        # niveau
         self.lbl = QtGui.QLabel('Kies hieronder het niveau:', self)
         self.lbl.resize(self.lbl.sizeHint())
         self.lbl.move(250, 120)
+        # radiobuttons
+        self.rbHavo = QtGui.QRadioButton('Havo', self)
+        self.rbHavo.resize(self.rbHavo.sizeHint())
+        self.rbHavo.move(250, 160)
+            # ath
+        self.rbAth = QtGui.QRadioButton('Atheneum', self)
+        self.rbAth.resize(self.rbAth.sizeHint())
+        self.rbAth.move(250, 180)
+            # athplus
+        self.rbAthPlus = QtGui.QRadioButton('Atheneum+', self)
+        self.rbAthPlus.resize(self.rbAthPlus.sizeHint())
+        self.rbAthPlus.move(250, 200)
+            # gymnasium
+        self.rbGym = QtGui.QRadioButton('Gymnasium', self)
+        self.rbGym.resize(self.rbGym.sizeHint())
+        self.rbGym.move(250, 220)
+        # een beetje ordenen
+        self.rbNiveau = QtGui.QButtonGroup()
+        self.rbNiveau.addButton(self.rbHavo, 1)
+        self.rbNiveau.addButton(self.rbAth, 2)
+        self.rbNiveau.addButton(self.rbAthPlus, 3)
+        self.rbNiveau.addButton(self.rbGym, 4)
 
 
-        #radiobuttons
-        self.rbtn1 = QtGui.QRadioButton('Havo', self)
-        self.rbtn1.resize(self.rbtn1.sizeHint())
-        self.rbtn1.move(250, 160)
-
-        self.rbtn2 = QtGui.QRadioButton('Atheneum', self)
-        self.rbtn2.resize(self.rbtn2.sizeHint())
-        self.rbtn2.move(250, 180)
-
-        self.rbtn3 = QtGui.QRadioButton('Atheneum+', self)
-        self.rbtn3.resize(self.rbtn3.sizeHint())
-        self.rbtn3.move(250, 200)
-
-        self.rbtn4 = QtGui.QRadioButton('Gymnasium', self)
-        self.rbtn4.resize(self.rbtn4.sizeHint())
-        self.rbtn4.move(250, 220)
+        # volgende-knop moet rbNiv doorgeven
+        self.btnVolgende = QtGui.QPushButton('Volgende', self)
+        self.btnVolgende.resize(self.btnVolgende.sizeHint()) # schat grootte knop en pas die toe
+        self.btnVolgende.move(450, 350)
+        #self.btnVolgende.clicked.connect(self.hideTwee)
+        # bij doorgeven argumenten met connect, gebruik altijd lambda
+        self.btnVolgende.clicked.connect(self.showDrie)
 
         # maak even menubar
         # een mooie statusbar gewoon omdat het kan
@@ -72,7 +78,7 @@ class venster(QtGui.QMainWindow):
         # pas op het laatst doen natuurlijk
         self.show()
 
-         # centreer venster tov scherm
+    # centreer venster tov scherm
     def center(self):
 
         qr = self.frameGeometry()
@@ -82,12 +88,29 @@ class venster(QtGui.QMainWindow):
 
 
     def showDrie(self):
-        from drie import Third
-        print('imported, showing Drie')
-        global Drie
-        Drie = Third()
-        while Drie:
-            lol
+        # rbNiv = self.rbNiveau
+        print("huey")
+        # welk niveau gekozen? open a.d.h. daarvan bijbehorende vakkendinges
+        sig = self.rbNiveau.checkedId()
+        if self.rbNiveau.checkedId == -1:
+            # indien niks gekozen, ook niet verder gaan
+            print("nope")
+        elif sig == 1: # havo
+            print("havoooo")
+        elif sig == 2:
+            print("ath")
+        elif sig == 3:
+            print("athplus")
+        elif sig == 4:
+            print("gym")
+
+
+        # from drie import Third
+        # print('imported, showing Drie')
+        # global Drie
+        # Drie = Third()
+        # while Drie:
+        #     lol
 
     def hideTwee(self):
         self.hide()
