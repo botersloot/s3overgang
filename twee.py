@@ -92,7 +92,7 @@ class venster(QtGui.QMainWindow):
         print("huey")
         # welk niveau gekozen? open a.d.h. daarvan bijbehorende vakkendinges
         sig = self.rbNiveau.checkedId()
-        if sig == -1:
+        if self.rbNiveau.checkedId == -1:
             # indien niks gekozen, ook niet verder gaan
             print("niks gekozen")
         elif sig == 1: # lol havo
