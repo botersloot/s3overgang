@@ -284,6 +284,12 @@ class Grid(QtGui.QWidget):
         self.show()
 
 def showVier():
+    # efkes op een rijtje (excl verplichte vakken bij profiel)
+    #   1 profiel
+    #   1 profielvak
+    #   1 profielkeuzevak (maar CM 2)
+    #   1|2 extra vak
+    # maar let op conflicten (dubbel gekozen)
     from vier import Fourth
     print('imported, showing Vier')
     Vier = Fourth()
