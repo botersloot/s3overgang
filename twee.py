@@ -54,7 +54,7 @@ class venster(QtGui.QMainWindow):
         self.btnVolgende = QtGui.QPushButton('Volgende', self)
         self.btnVolgende.resize(self.btnVolgende.sizeHint()) # schat grootte knop en pas die toe
         self.btnVolgende.move(450, 350)
-        #self.btnVolgende.clicked.connect(self.hideTwee)
+        self.btnVolgende.clicked.connect(self.hideTwee)
         # bij doorgeven argumenten met connect, gebruik altijd lambda
         self.btnVolgende.clicked.connect(self.showDrie)
 
@@ -94,23 +94,27 @@ class venster(QtGui.QMainWindow):
         sig = self.rbNiveau.checkedId()
         if self.rbNiveau.checkedId == -1:
             # indien niks gekozen, ook niet verder gaan
-            print("nope")
-        elif sig == 1: # havo
+            print("niks gekozen")
+        elif sig == 1: # lol havo
+            from Hdrie import Third
             print("havoooo")
-        elif sig == 2:
-            print("ath")
-        elif sig == 3:
-            print("athplus")
-        elif sig == 4:
-            print("gym")
+        elif sig == 2: # atheneum opperras
+            from Adrie import Third
+            print("atheneum gekozen")
+        elif sig == 3: # atheneum tryhards
+            from APdrie import Third
+            print("atheneum+ gekozen")
+        elif sig == 4: # gymnasium
+            from Gdrie import Third
+            print("gymnasium gekozen")
 
 
         # from drie import Third
         # print('imported, showing Drie')
-        # global Drie
-        # Drie = Third()
-        # while Drie:
-        #     lol
+        global Drie
+        Drie = Third()
+        while Drie:
+            lol
 
     def hideTwee(self):
         self.hide()
