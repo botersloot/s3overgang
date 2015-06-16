@@ -40,7 +40,7 @@ class Third(QtGui.QMainWindow):
         # pas op het laatst doen natuurlijk
 
 
-        
+
         self.show()
     def center(self):
 
@@ -62,7 +62,7 @@ class Grid(QtGui.QWidget):
         self.label1 = QtGui.QLabel("Profielen")
         self.label2 = QtGui.QLabel("Gemeenschappelijk deel")
         self.label3 = QtGui.QLabel("Profielvakken")
-        self.label4 = QtGui.QLabel("Profielkezuevakken \n(Bij CM 2 vakken bij de andere profielen 1 vak)")
+        self.label4 = QtGui.QLabel("Profielkeuzevakken \n(Bij CM 2 vakken bij de andere profielen 1 vak)")
         self.label5 = QtGui.QLabel("Vrije deel(verplicht 1 vak)/ \nExtra vak(optioneel) \n(Hooguit 2 aanvinken!)")
 
         self.btnVolgende = QtGui.QPushButton('Volgende', self)
@@ -175,7 +175,7 @@ class Grid(QtGui.QWidget):
         grid.addWidget(self.lblEMGs, 4, 5)
         grid.addWidget(self.rbEMWA,  3, 4)
         grid.addWidget(self.rbEMWB,  3, 5)
-        
+
         # NG
         nr_gr_NG = QtGui.QButtonGroup(self)
         nr_gr_NG.addButton(self.rbNGWA, 1)
@@ -203,6 +203,7 @@ class Grid(QtGui.QWidget):
         qr_gr_CM = QtGui.QButtonGroup(self)
         qr_gr_CM.addButton(self.rbCMFa2, 1)
         qr_gr_CM.addButton(self.rbCMDu2, 2)
+        qr_gr_CM.addButton(self.rbCMTe,  3)
         grid.addWidget(self.rbCMAk, 5, 1)
         grid.addWidget(self.rbCMEc, 5, 2)
         grid.addWidget(self.rbCMFa2,6, 1)
@@ -253,7 +254,7 @@ class Grid(QtGui.QWidget):
         self.rbCMIn = QtGui.QCheckBox("In")
         grid.addWidget(self.rbCMFa3, 8,1)
         grid.addWidget(self.rbCMDu3, 8,2)
-        grid.addWidget(self.rbCMAk2, 9,1) 
+        grid.addWidget(self.rbCMAk2, 9,1)
         grid.addWidget(self.rbCMTe2, 9,2)
         grid.addWidget(self.rbCMEc2,10,1)
         grid.addWidget(self.rbCMMo, 10,2)
@@ -270,7 +271,7 @@ class Grid(QtGui.QWidget):
         grid.addWidget(self.rbEMDu3, 7, 4)
         grid.addWidget(self.rbEMMo2, 7, 5)
         grid.addWidget(self.rbEMFa3, 8, 4)
-        grid.addWidget(self.rbEMIn,  8, 5) 
+        grid.addWidget(self.rbEMIn,  8, 5)
         grid.addWidget(self.rbEMTe,  9, 4)
         grid.addWidget(self.rbEMBi,  9, 5)
         grid.addWidget(self.rbEMAk2, 10,4)
@@ -323,7 +324,7 @@ def showTwee():
     print('imported, showing Twee')
     Twee = venster()
     while Twee:
-        lol        
+        lol
 
 
 def hideDrie():

@@ -63,7 +63,7 @@ class Grid(QtGui.QWidget):
         self.label1 = QtGui.QLabel("Profielen")
         self.label2 = QtGui.QLabel("Gemeenschappelijk deel")
         self.label3 = QtGui.QLabel("Profielvakken")
-        self.label4 = QtGui.QLabel("Profielkezuevakken \n(Bij CM 2 vakken bij de andere profielen 1 vak)")
+        self.label4 = QtGui.QLabel("Profielkeuzevakken \n(Bij CM 2 vakken bij de andere profielen 1 vak)")
         self.label5 = QtGui.QLabel("Vrije deel(verplicht 1 vak)/ \nExtra vak(optioneel) \n(Hooguit 2 aanvinken!)")
 
         self.btnVolgende = QtGui.QPushButton('Volgende', self)
@@ -171,6 +171,7 @@ class Grid(QtGui.QWidget):
         qr_gr_CM = QtGui.QButtonGroup(self)
         qr_gr_CM.addButton(self.rbCMFa2, 1)
         qr_gr_CM.addButton(self.rbCMDu2, 2)
+        qr_gr_CM.addButton(self.rbCMTe,  3)
         grid.addWidget(self.rbCMAk, 4, 1)
         grid.addWidget(self.rbCMEc, 4, 2)
         grid.addWidget(self.rbCMFa2,5, 1)

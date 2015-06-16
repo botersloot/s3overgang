@@ -2,7 +2,7 @@
 
 **Abstract**
 
-Een programma die helpt bij de bepaling overgang 3deklassers
+Een programma dat helpt bij de bepaling overgang van derde klassers
 
 **notes voor development**
 
@@ -29,3 +29,4 @@ elif sig == 2:
 - behouden van variabelen
 
 globale variabelen?
+<i> Zijn in mjn optiek niet nodig.</i>
