@@ -94,7 +94,7 @@ class Grid(QtGui.QWidget):
         grid.addWidget(self.label8, 1, 5)
         grid.addWidget(self.label9, 1, 7)
 
-        # profielen
+        # profielen         nr_gr_1
         self.rb1 = QtGui.QRadioButton("CM")
         self.rb2 = QtGui.QRadioButton("EM")
         self.rb3 = QtGui.QRadioButton("NG")
@@ -110,7 +110,7 @@ class Grid(QtGui.QWidget):
         grid.addWidget(self.rb3, 0, 5)
         grid.addWidget(self.rb4, 0, 7)
 
-        # profielvakken
+        # profielvakken     nr_gr_$PF
             # CM
         self.rbCMFa = QtGui.QRadioButton("Fa")
         self.rbCMDu = QtGui.QRadioButton("Du")
@@ -129,6 +129,7 @@ class Grid(QtGui.QWidget):
         self.lblNTWB = QtGui.QLabel("WB")
         self.lblNTNa = QtGui.QLabel("Na")
         self.lblNTSk = QtGui.QLabel("Sk")
+
             # CM
         nr_gr_CM = QtGui.QButtonGroup(self)
         nr_gr_CM.addButton(self.rbCMFa, 1)
@@ -136,10 +137,7 @@ class Grid(QtGui.QWidget):
         grid.addWidget(self.rbCMFa,  2, 1)
         grid.addWidget(self.rbCMDu,  2, 2)
         grid.addWidget(self.lblCMGs, 3, 1)
-
-
-
-        # EM
+            # EM
         nr_gr_EM = QtGui.QButtonGroup(self)
         nr_gr_EM.addButton(self.rbEMWA, 1)
         nr_gr_EM.addButton(self.rbEMWB, 2)
@@ -147,8 +145,7 @@ class Grid(QtGui.QWidget):
         grid.addWidget(self.lblEMGs, 3, 4)
         grid.addWidget(self.rbEMWA,  2, 3)
         grid.addWidget(self.rbEMWB,  2, 4)
-
-        # NG
+            # NG
         nr_gr_NG = QtGui.QButtonGroup(self)
         nr_gr_NG.addButton(self.rbNGWA, 1)
         nr_gr_NG.addButton(self.rbNGWB, 2)
@@ -156,13 +153,12 @@ class Grid(QtGui.QWidget):
         grid.addWidget(self.rbNGWB, 2,  6)
         grid.addWidget(self.lblNGBi,3,  5)
         grid.addWidget(self.lblNGSk,3,  6)
-
-        # NT
+            # NT
         grid.addWidget(self.lblNTWB, 2, 7)
         grid.addWidget(self.lblNTNa, 3, 7)
         grid.addWidget(self.lblNTSk, 3, 8)
 
-        # profielkeuzevakken
+        # profielkeuzevakken    pr_gr_$PF
             # CM
         self.rbCMAk = QtGui.QRadioButton("Ak")
         self.rbCMEc = QtGui.QRadioButton("Ec")
