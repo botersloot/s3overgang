@@ -26,9 +26,9 @@ class Fourth(QtGui.QMainWindow):
         self.btnBereken.clicked.connect(self.doBereken)
         self.btnVorige = QtGui.QPushButton('Vorige', self)
         self.btnVorige.resize(self.btnVorige.sizeHint())
-        self.btnVorige.move(350, 350)  
+        self.btnVorige.move(350, 350)
         self.btnVorige.clicked.connect(showDrie)
-        self.btnVorige.clicked.connect(hideVier)       
+        self.btnVorige.clicked.connect(hideVier)
 
         #message
 
@@ -228,16 +228,16 @@ class Fourth(QtGui.QMainWindow):
         self.move(qr.topLeft())
 
     def doBereken(self):
-        pass        
+        pass
 
-    
+
 
 def showDrie(self):
-    from drie import Third
+    from Gdrie import Third
     print('imported, Showing Drie')
     Drie = Third()
     while Drie:
         lol
 
 def hideVier(self):
-    drie.Vier.hide()       
+    drie.Vier.hide()

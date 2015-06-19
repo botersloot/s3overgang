@@ -313,7 +313,7 @@ class Grid(QtGui.QWidget):
         self.show()
 
 def showVier():
-    from vier import Fourth
+    from APvier import Fourth
     print('imported, showing Vier')
     Vier = Fourth()
     while Vier:

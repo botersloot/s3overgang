@@ -290,7 +290,7 @@ def showVier():
     #   1 profielkeuzevak (maar CM 2)
     #   1|2 extra vak
     # maar let op conflicten (dubbel gekozen)
-    from vier import Fourth
+    from Hvier import Fourth
     print('imported, showing Vier')
     Vier = Fourth()
     while Vier:
