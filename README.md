@@ -8,7 +8,7 @@ Een programma dat helpt bij de bepaling overgang van derde klassers
 
 - beheren buttongroups
 
-```
+```python
 # voeg eerst toe
 self.$buttonName = QtGui.$QButtonType('$caption', self)
 # maak group
@@ -29,4 +29,21 @@ elif sig == 2:
 - behouden van variabelen
 
 globale variabelen?
-<i> Zijn in mjn optiek niet nodig.</i>
+
+
+#### efkes op een rijtje
+
+- 1 profiel
+  - gemeenschappelijke vakken
+  - 1 profielvak
+  - 1 profielkeuzevak
+    - let op: CM kiest 2
+ - 1|2 extra vak
+    - let op: geen conflict met PV of PKV
+
+stel profielkeuzevakken CM `pr_gr_CM` dan
+
+```python
+# maak buttongroup, zie boven
+# voeg knoppen toe aan buttongroup, zie boven
+```

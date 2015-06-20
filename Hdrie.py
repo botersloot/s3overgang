@@ -111,6 +111,7 @@ class Grid(QtGui.QWidget):
         grid.addWidget(self.rb4, 0, 7)
 
         # profielvakken     nr_gr_$PF
+        #   behalve NT, daar kies je niks
             # CM
         self.rbCMFa = QtGui.QRadioButton("Fa")
         self.rbCMDu = QtGui.QRadioButton("Du")
@@ -131,24 +132,24 @@ class Grid(QtGui.QWidget):
         self.lblNTSk = QtGui.QLabel("Sk")
 
             # CM
-        nr_gr_CM = QtGui.QButtonGroup(self)
-        nr_gr_CM.addButton(self.rbCMFa, 1)
-        nr_gr_CM.addButton(self.rbCMDu, 2)
+        self.nr_gr_CM = QtGui.QButtonGroup(self)
+        self.nr_gr_CM.addButton(self.rbCMFa, 1)
+        self.nr_gr_CM.addButton(self.rbCMDu, 2)
         grid.addWidget(self.rbCMFa,  2, 1)
         grid.addWidget(self.rbCMDu,  2, 2)
         grid.addWidget(self.lblCMGs, 3, 1)
             # EM
-        nr_gr_EM = QtGui.QButtonGroup(self)
-        nr_gr_EM.addButton(self.rbEMWA, 1)
-        nr_gr_EM.addButton(self.rbEMWB, 2)
+        self.nr_gr_EM = QtGui.QButtonGroup(self)
+        self.nr_gr_EM.addButton(self.rbEMWA, 1)
+        self.nr_gr_EM.addButton(self.rbEMWB, 2)
         grid.addWidget(self.lblEMEc, 3, 3)
         grid.addWidget(self.lblEMGs, 3, 4)
         grid.addWidget(self.rbEMWA,  2, 3)
         grid.addWidget(self.rbEMWB,  2, 4)
             # NG
-        nr_gr_NG = QtGui.QButtonGroup(self)
-        nr_gr_NG.addButton(self.rbNGWA, 1)
-        nr_gr_NG.addButton(self.rbNGWB, 2)
+        self.nr_gr_NG = QtGui.QButtonGroup(self)
+        self.nr_gr_NG.addButton(self.rbNGWA, 1)
+        self.nr_gr_NG.addButton(self.rbNGWB, 2)
         grid.addWidget(self.rbNGWA, 2,  5)
         grid.addWidget(self.rbNGWB, 2,  6)
         grid.addWidget(self.lblNGBi,3,  5)
@@ -284,12 +285,11 @@ class Grid(QtGui.QWidget):
         self.show()
 
 def showVier():
-    # efkes op een rijtje (excl verplichte vakken bij profiel)
-    #   1 profiel
-    #   1 profielvak
-    #   1 profielkeuzevak (maar CM 2)
-    #   1|2 extra vak
-    # maar let op conflicten (dubbel gekozen)
+    # zie README.md
+    # gemeenschappelijke vakken         vakGem
+    vakGem = ["Ne", "En", "Re", "Ma", "CKV", "Lo", "Gd"]
+    # profielvakken                     vakPV
+    vakPV  =
     from Hvier import Fourth
     print('imported, showing Vier')
     Vier = Fourth()
