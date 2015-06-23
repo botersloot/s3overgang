@@ -1,6 +1,6 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
-
+# Hoi, werkt dit?
 # dit bovenstaande niet aanraken, het is nodig
 
 # let op: importeer enkel het nodige, schoolpc's zijn sceer
@@ -116,20 +116,21 @@ class Grid(QtGui.QWidget):
         self.rbCMFa = QtGui.QRadioButton("Fa")
         self.rbCMDu = QtGui.QRadioButton("Du")
         self.lblCMGs = QtGui.QLabel("Gs")
-            # EM
+        # EM
         self.rbEMWA = QtGui.QRadioButton("WA")
         self.rbEMWB = QtGui.QRadioButton("WB")
         self.lblEMEc = QtGui.QLabel("Ec")
         self.lblEMGs = QtGui.QLabel("Gs")
-            # NG
+        # NG
         self.rbNGWA = QtGui.QRadioButton("WA")
         self.rbNGWB = QtGui.QRadioButton("WB")
         self.lblNGBi = QtGui.QLabel("Bi")
         self.lblNGSk = QtGui.QLabel("Sk")
-            # NT
+        # NT
         self.lblNTWB = QtGui.QLabel("WB")
         self.lblNTNa = QtGui.QLabel("Na")
         self.lblNTSk = QtGui.QLabel("Sk")
+
 
             # CM
         self.nr_gr_CM = QtGui.QButtonGroup(self)
@@ -278,9 +279,20 @@ class Grid(QtGui.QWidget):
         grid.addWidget(self.rbNTAk,9, 7)
         grid.addWidget(self.rbNTIn2, 9, 8)
         grid.addWidget(self.rbNTBi2,10,7)
-
-
         self.setLayout(grid)
+
+        alfa = nr_gr_1.checkedId()
+        if alfa == 1:
+            self.rbCMFa.setEnabled(false)
+            self.rbCMDu.setEnabled(false)
+        else:
+            print("Niets gekozen")
+
+
+
+
+
+
 
         self.show()
 
