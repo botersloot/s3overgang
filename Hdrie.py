@@ -54,6 +54,8 @@ class Grid(QtGui.QWidget):
     def __init__(self):
         super(Grid, self).__init__()
         self.gridUI()
+        self.profielen()
+
 
     def gridUI(self):
 
@@ -99,11 +101,11 @@ class Grid(QtGui.QWidget):
         self.rb2 = QtGui.QRadioButton("EM")
         self.rb3 = QtGui.QRadioButton("NG")
         self.rb4 = QtGui.QRadioButton("NT")
-        nr_gr_1 = QtGui.QButtonGroup()
-        nr_gr_1.addButton(self.rb1, 1)
-        nr_gr_1.addButton(self.rb2, 2)
-        nr_gr_1.addButton(self.rb3, 3)
-        nr_gr_1.addButton(self.rb4, 4)
+        self.nr_gr_1 = QtGui.QButtonGroup()
+        self.nr_gr_1.addButton(self.rb1, 1)
+        self.nr_gr_1.addButton(self.rb2, 2)
+        self.nr_gr_1.addButton(self.rb3, 3)
+        self.nr_gr_1.addButton(self.rb4, 4)
 
         grid.addWidget(self.rb1, 0, 1)
         grid.addWidget(self.rb2, 0, 3)
@@ -116,6 +118,8 @@ class Grid(QtGui.QWidget):
         self.rbCMFa = QtGui.QRadioButton("Fa")
         self.rbCMDu = QtGui.QRadioButton("Du")
         self.lblCMGs = QtGui.QLabel("Gs")
+
+
         # EM
         self.rbEMWA = QtGui.QRadioButton("WA")
         self.rbEMWB = QtGui.QRadioButton("WB")
@@ -280,28 +284,31 @@ class Grid(QtGui.QWidget):
         grid.addWidget(self.rbNTIn2, 9, 8)
         grid.addWidget(self.rbNTBi2,10,7)
         self.setLayout(grid)
-
-        alfa = nr_gr_1.checkedId()
-        if alfa == 1:
-            self.rbCMFa.setEnabled(false)
-            self.rbCMDu.setEnabled(false)
-        else:
-            print("Niets gekozen")
-
-
-
-
-
-
-
         self.show()
+        self.btnVolgende.clicked.connect(self.profielen)
+
+    def profielen(self):
+
+        sigma = self.nr_gr_1.checkedId()
+        if sigma == 1: # lol havo
+            print("CM gekozen")
+        elif sigma == 2: # atheneum opperras
+            print("EM gekozen")
+        elif sigma == 3: # atheneum tryhards
+            print("NG gekozen")
+        elif sigma == 4: # gymnasium
+            print("NT gekozen")
+    #def PV (self):
+
+        #rho = self.nr_gr_CM
+
 
 def showVier():
     # zie README.md
     # gemeenschappelijke vakken         vakGem
     vakGem = ["Ne", "En", "Re", "Ma", "CKV", "Lo", "Gd"]
     # profielvakken                     vakPV
-    vakPV  =
+    #vakPV  =
     from Hvier import Fourth
     print('imported, showing Vier')
     Vier = Fourth()
