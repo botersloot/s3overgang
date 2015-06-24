@@ -330,7 +330,7 @@ class Grid(QtGui.QWidget):
 
 def gekozen(soort, antw):
     if soort == "PV":
-        exec(global gekPV)
+        exec(global "gekPV")
         gekPV = antw
 
 
