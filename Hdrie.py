@@ -54,7 +54,7 @@ class Grid(QtGui.QWidget):
     def __init__(self):
         super(Grid, self).__init__()
         self.gridUI()
-        self.profielen()
+        # self.profielen()
 
 
     def gridUI(self):
@@ -112,25 +112,30 @@ class Grid(QtGui.QWidget):
         grid.addWidget(self.rb3, 0, 5)
         grid.addWidget(self.rb4, 0, 7)
 
+        # indien gekozen
+
+        self.rb1.clicked.connect(lambda: gekozen("PF", "CM"))
+        self.rb2.clicked.connect(lambda: gekozen("PF", "EM"))
+        self.rb3.clicked.connect(lambda: gekozen("PF", "NG"))
+        self.rb4.clicked.connect(lambda: gekozen("PF", "NT"))
+
         # profielvakken     nr_gr_$PF
         #   behalve NT, daar kies je niks
             # CM
         self.rbCMFa = QtGui.QRadioButton("Fa")
         self.rbCMDu = QtGui.QRadioButton("Du")
         self.lblCMGs = QtGui.QLabel("Gs")
-
-
-        # EM
+            # EM
         self.rbEMWA = QtGui.QRadioButton("WA")
         self.rbEMWB = QtGui.QRadioButton("WB")
         self.lblEMEc = QtGui.QLabel("Ec")
         self.lblEMGs = QtGui.QLabel("Gs")
-        # NG
+            # NG
         self.rbNGWA = QtGui.QRadioButton("WA")
         self.rbNGWB = QtGui.QRadioButton("WB")
         self.lblNGBi = QtGui.QLabel("Bi")
         self.lblNGSk = QtGui.QLabel("Sk")
-        # NT
+            # NT
         self.lblNTWB = QtGui.QLabel("WB")
         self.lblNTNa = QtGui.QLabel("Na")
         self.lblNTSk = QtGui.QLabel("Sk")
@@ -163,6 +168,13 @@ class Grid(QtGui.QWidget):
         grid.addWidget(self.lblNTWB, 2, 7)
         grid.addWidget(self.lblNTNa, 3, 7)
         grid.addWidget(self.lblNTSk, 3, 8)
+
+        self.rbCMFa.clicked.connect(lambda: gekozen("PV", "Fa"))
+        self.rbCMDu.clicked.connect(lambda: gekozen("PV", "Du"))
+        self.rbEMWA.clicked.connect(lambda: gekozen("PV", "WA"))
+        self.rbEMWB.clicked.connect(lambda: gekozen("PV", "WB"))
+        self.rb # HIER DOORWERKEN
+
 
         # profielkeuzevakken    pr_gr_$PF
             # CM
@@ -216,6 +228,12 @@ class Grid(QtGui.QWidget):
         pr_gr_NT.addButton(self.rbNTIn, 2)
         grid.addWidget(self.rbNTBi, 4, 7)
         grid.addWidget(self.rbNTIn, 5, 7)
+
+
+        self.rbCMAk.clicked.connect(lambda: gekozen("PKV", "Ak"))
+        self.rbCMEc.clicked.connect(lambda: gekozen("PKV", "Ec"))
+
+
 
         # Vrije deel/extra vak
             # CM
@@ -287,23 +305,39 @@ class Grid(QtGui.QWidget):
         self.show()
         self.btnVolgende.clicked.connect(self.profielen)
 
-    def profielen(self):
+    # def profielen(self):
+    #
+    #     sigma = self.nr_gr_1.checkedId()
+    #     if sigma == -1:
+    #         print("niks gekozen")
+    #         return("niks")
+    #     elif sigma == 1:
+    #         print("CM gekozen")
+    #         return("CM")
+    #     elif sigma == 2:
+    #         print("EM gekozen")
+    #         return("EM")
+    #     elif sigma == 3:
+    #         print("NG gekozen")
+    #         return("NG")
+    #     elif sigma == 4:
+    #         print("NT gekozen")
+    #         return("NT")
+    # #def PV (self):
+    #
+    #     #rho = self.nr_gr_CM
 
-        sigma = self.nr_gr_1.checkedId()
-        if sigma == 1: # lol havo
-            print("CM gekozen")
-        elif sigma == 2: # atheneum opperras
-            print("EM gekozen")
-        elif sigma == 3: # atheneum tryhards
-            print("NG gekozen")
-        elif sigma == 4: # gymnasium
-            print("NT gekozen")
-    #def PV (self):
 
-        #rho = self.nr_gr_CM
+def gekozen(soort, antw):
+    if soort == "PV":
+        exec(global gekPV)
+        gekPV = antw
 
 
 def showVier():
+    # gekozen profiel
+    # gekProfiel = Third.Grid.profielen()
+    # print("gekProfiel is %s" % gekProfiel)
     # zie README.md
     # gemeenschappelijke vakken         vakGem
     vakGem = ["Ne", "En", "Re", "Ma", "CKV", "Lo", "Gd"]
