@@ -41,9 +41,17 @@ globale variabelen?
  - 1|2 extra vak
     - let op: geen conflict met PV of PKV
 
-stel profielkeuzevakken CM `pr_gr_CM` dan
+stel profielkeuzevakken CM `rbCMAk` gekozen dan
 
 ```python
-# maak buttongroup, zie boven
-# voeg knoppen toe aan buttongroup, zie boven
+# stel profiel NG gekozen
+self.rb1.clicked.connect(lambda: gekozen("PF", "NG"))
+# stel profielvak WA gekozen
+self.rbNGWA.clicked.connect(lambda: gekozen("PV", "WA"))
+# stel pkv Ak gekozen
+self.rbNGAk.clicked.connect(lambda: gekozen("PKV", "Ak"))
+# stel vkv In gekozen
+self.rbNGIn.clicked.connect(lambda: gekozen("VKV", "In"))
 ```
+
+vervolgens gaan berekeningen in showVier (moet nog gefixt worden)
