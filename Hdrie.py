@@ -125,16 +125,25 @@ class Grid(QtGui.QWidget):
         self.rbCMFa = QtGui.QRadioButton("Fa")
         self.rbCMDu = QtGui.QRadioButton("Du")
         self.lblCMGs = QtGui.QLabel("Gs")
+
+        #self.rbCMFa.clicked.connect(lambda: gekozen("PV", "Fa"))
+        #self.rbCMDu.clicked.connect(lambda: gekozen("PV", "Du"))
             # EM
         self.rbEMWA = QtGui.QRadioButton("WA")
         self.rbEMWB = QtGui.QRadioButton("WB")
         self.lblEMEc = QtGui.QLabel("Ec")
         self.lblEMGs = QtGui.QLabel("Gs")
+
+        #self.rbEMWA.clicked.connect(lambda: gekozen("PV", "WA"))
+        #self.rbEMWB.clicked.connect(lambda: gekozen("PV", "WB"))
             # NG
         self.rbNGWA = QtGui.QRadioButton("WA")
         self.rbNGWB = QtGui.QRadioButton("WB")
         self.lblNGBi = QtGui.QLabel("Bi")
         self.lblNGSk = QtGui.QLabel("Sk")
+
+        #self.rbNGWA.clicked.connect(lambda: gekozen("PV", "WA"))
+        #self.rbNGWB.clicked.connect(lambda: gekozen("PV", "WB"))
             # NT
         self.lblNTWB = QtGui.QLabel("WB")
         self.lblNTNa = QtGui.QLabel("Na")
@@ -173,7 +182,9 @@ class Grid(QtGui.QWidget):
         self.rbCMDu.clicked.connect(lambda: gekozen("PV", "Du"))
         self.rbEMWA.clicked.connect(lambda: gekozen("PV", "WA"))
         self.rbEMWB.clicked.connect(lambda: gekozen("PV", "WB"))
-        self.rb # HIER DOORWERKEN
+        self.rbNGWA.clicked.connect(lambda: gekozen("PV", "WA"))
+        self.rbNGWB.clicked.connect(lambda: gekozen("PV", "WB"))
+
 
 
         # profielkeuzevakken    pr_gr_$PF
@@ -232,6 +243,10 @@ class Grid(QtGui.QWidget):
 
         self.rbCMAk.clicked.connect(lambda: gekozen("PKV", "Ak"))
         self.rbCMEc.clicked.connect(lambda: gekozen("PKV", "Ec"))
+        self.rbCMFa2.clicked.connect(lambda: gekozen("PKV", "Fa"))
+        self.rbCMDu2.clicked.connect(lambda: gekozen("PKV", "Du"))
+        self.rbCMTe.clicked.connect(lambda: gekozen("PKV", "Te"))
+        # self.rbEM.clicked.connect()
 
 
 
@@ -359,4 +374,5 @@ def showTwee():
 
 
 def hideDrie():
+    # self.hide()
     twee.Drie.hide()
