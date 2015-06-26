@@ -126,24 +126,21 @@ class Grid(QtGui.QWidget):
         self.rbCMDu = QtGui.QRadioButton("Du")
         self.lblCMGs = QtGui.QLabel("Gs")
 
-        #self.rbCMFa.clicked.connect(lambda: gekozen("PV", "Fa"))
-        #self.rbCMDu.clicked.connect(lambda: gekozen("PV", "Du"))
+
             # EM
         self.rbEMWA = QtGui.QRadioButton("WA")
         self.rbEMWB = QtGui.QRadioButton("WB")
         self.lblEMEc = QtGui.QLabel("Ec")
         self.lblEMGs = QtGui.QLabel("Gs")
 
-        #self.rbEMWA.clicked.connect(lambda: gekozen("PV", "WA"))
-        #self.rbEMWB.clicked.connect(lambda: gekozen("PV", "WB"))
+
             # NG
         self.rbNGWA = QtGui.QRadioButton("WA")
         self.rbNGWB = QtGui.QRadioButton("WB")
         self.lblNGBi = QtGui.QLabel("Bi")
         self.lblNGSk = QtGui.QLabel("Sk")
 
-        #self.rbNGWA.clicked.connect(lambda: gekozen("PV", "WA"))
-        #self.rbNGWB.clicked.connect(lambda: gekozen("PV", "WB"))
+
             # NT
         self.lblNTWB = QtGui.QLabel("WB")
         self.lblNTNa = QtGui.QLabel("Na")
@@ -240,18 +237,27 @@ class Grid(QtGui.QWidget):
         grid.addWidget(self.rbNTBi, 4, 7)
         grid.addWidget(self.rbNTIn, 5, 7)
 
-
-        self.rbCMAk.clicked.connect(lambda: gekozen("PKV", "Ak"))
+        # PKV connect lambda
+        # CM
         self.rbCMEc.clicked.connect(lambda: gekozen("PKV", "Ec"))
+        self.rbCMAk.clicked.connect(lambda: gekozen("PKV", "Ak"))
         self.rbCMFa2.clicked.connect(lambda: gekozen("PKV", "Fa"))
         self.rbCMDu2.clicked.connect(lambda: gekozen("PKV", "Du"))
         self.rbCMTe.clicked.connect(lambda: gekozen("PKV", "Te"))
-        # self.rbEM.clicked.connect()
-
-
+        # EM
+        self.rbEMFa.clicked.connect(lambda: gekozen("PKV", "Fa"))
+        self.rbEMDu.clicked.connect(lambda: gekozen("PKV", "Du"))
+        self.rbEMAk.clicked.connect(lambda: gekozen("PKV", "Ak"))
+        self.rbEMMo.clicked.connect(lambda: gekozen("PKV", "MO"))
+        # NG
+        self.rbNGAk.clicked.connect(lambda: gekozen("PKV", "Ak"))
+        self.rbNGNa.clicked.connect(lambda: gekozen("PKV", "Na"))
+        # NT
+        self.rbNTBi.clicked.connect(lambda: gekozen("PKV", "Bi"))
+        self.rbNTIn.clicked.connect(lambda: gekozen("PKV", "In"))
 
         # Vrije deel/extra vak
-            # CM
+        # CM
         self.rbCMWA = QtGui.QCheckBox("WA")
         self.rbCMFa3 = QtGui.QCheckBox("Fa")
         self.rbCMDu3 = QtGui.QCheckBox("Du")
@@ -269,7 +275,7 @@ class Grid(QtGui.QWidget):
         grid.addWidget(self.rbCMMo, 10,1)
         grid.addWidget(self.rbCMIn, 10,2)
 
-            # EM
+        # EM
         self.rbEMDu2 = QtGui.QCheckBox("Du")
         self.rbEMMo2 = QtGui.QCheckBox("MO")
         self.rbEMFa2 = QtGui.QCheckBox("Fa")
@@ -285,7 +291,7 @@ class Grid(QtGui.QWidget):
         grid.addWidget(self.rbEMBi,  9, 4)
         grid.addWidget(self.rbEMAk2, 10,3)
 
-            # NG
+        # NG
         self.rbNGFa = QtGui.QCheckBox("Fa")
         self.rbNGEc = QtGui.QCheckBox("Ec")
         self.rbNGDu = QtGui.QCheckBox("Du")
@@ -301,46 +307,63 @@ class Grid(QtGui.QWidget):
         grid.addWidget(self.rbNGIn, 9, 6)
         grid.addWidget(self.rbNGNa2,10,5)
 
-            # NT
-        self.rbNTFa2 = QtGui.QCheckBox("Fa")
+        # NT
+        self.rbNTFa = QtGui.QCheckBox("Fa")
         self.rbNTEc = QtGui.QCheckBox("Ec")
-        self.rbNTDu2 = QtGui.QCheckBox("Du")
+        self.rbNTDu = QtGui.QCheckBox("Du")
         self.rbNTTe = QtGui.QCheckBox("Te")
         self.rbNTAk = QtGui.QCheckBox("Ak")
         self.rbNTIn2 = QtGui.QCheckBox("In")
         self.rbNTBi2 = QtGui.QCheckBox("Bi")
-        grid.addWidget(self.rbNTFa2, 7, 7)
+        grid.addWidget(self.rbNTFa, 7, 7)
         grid.addWidget(self.rbNTEc, 7, 8)
-        grid.addWidget(self.rbNTDu2, 8, 7)
+        grid.addWidget(self.rbNTDu, 8, 7)
         grid.addWidget(self.rbNTTe, 8, 8)
         grid.addWidget(self.rbNTAk,9, 7)
         grid.addWidget(self.rbNTIn2, 9, 8)
         grid.addWidget(self.rbNTBi2,10,7)
+
+        # VKV connect lambda
+        # CM
+        self.rbCMWA.clicked.connect(lambda: gekozen("VKV", "WA"))
+        self.rbCMTe2.clicked.connect(lambda: gekozen("VKV", "Te"))
+        self.rbCMFa3.clicked.connect(lambda: gekozen("VKV", "Fa"))
+        self.rbCMEc.clicked.connect(lambda: gekozen("VKV", "Ec"))
+        self.rbCMDu3.clicked.connect(lambda: gekozen("VKV", "Du"))
+        self.rbCMMo.clicked.connect(lambda: gekozen("VKV", "MO"))
+        self.rbCMAk2.clicked.connect(lambda: gekozen("VKV", "Ak"))
+        self.rbCMIn.clicked.connect(lambda: gekozen("VKV", "In"))
+        # EM
+        self.rbEMTe.clicked.connect(lambda: gekozen("VKV", "Te"))
+        self.rbEMFa2.clicked.connect(lambda: gekozen("VKV", "Fa"))
+        self.rbEMDu2.clicked.connect(lambda: gekozen("VKV", "Du"))
+        self.rbEMMo.clicked.connect(lambda: gekozen("VKV", "MO"))
+        self.rbEMAk2.clicked.connect(lambda: gekozen("VKV", "Ak"))
+        self.rbEMIn.clicked.connect(lambda: gekozen("VKV", "In"))
+        self.rbEMBi.clicked.connect(lambda: gekozen("VKV", "Bi"))
+        # NG
+        self.rbNGFa.clicked.connect(lambda: gekozen("VKV", "Fa"))
+        self.rbNGEc.clicked.connect(lambda: gekozen("VKV", "Ec"))
+        self.rbNGDu.clicked.connect(lambda: gekozen("VKV", "Du"))
+        self.rbNGTe.clicked.connect(lambda: gekozen("VKV", "Te"))
+        self.rbNGAk2.clicked.connect(lambda: gekozen("VKV","Ak"))
+        self.rbNGIn.clicked.connect(lambda: gekozen("VKV", "In"))
+        self.rbNGNa2.clicked.connect(lambda: gekozen("VKV", "Na"))
+        # NT
+        self.rbNTFa.clicked.connect(lambda: gekozen("VKV", "Fa"))
+        self.rbNTEc.clicked.connect(lambda: gekozen("VKV", "Ec"))
+        self.rbNTDu.clicked.connect(lambda: gekozen("VKV", "Du"))
+        self.rbNTTe.clicked.connect(lambda: gekozen("VKV", "Te"))
+        self.rbNTAk.clicked.connect(lambda: gekozen("VKV","Ak"))
+        self.rbNTIn2.clicked.connect(lambda: gekozen("VKV", "In"))
+        self.rbNTBi2.clicked.connect(lambda: gekozen("VKV", "Bi"))
+
+
         self.setLayout(grid)
         self.show()
-        self.btnVolgende.clicked.connect(self.profielen)
 
-    # def profielen(self):
-    #
-    #     sigma = self.nr_gr_1.checkedId()
-    #     if sigma == -1:
-    #         print("niks gekozen")
-    #         return("niks")
-    #     elif sigma == 1:
-    #         print("CM gekozen")
-    #         return("CM")
-    #     elif sigma == 2:
-    #         print("EM gekozen")
-    #         return("EM")
-    #     elif sigma == 3:
-    #         print("NG gekozen")
-    #         return("NG")
-    #     elif sigma == 4:
-    #         print("NT gekozen")
-    #         return("NT")
-    # #def PV (self):
-    #
-    #     #rho = self.nr_gr_CM
+
+
 
 
 def gekozen(soort, antw):
@@ -350,9 +373,8 @@ def gekozen(soort, antw):
 
 
 def showVier():
-    # gekozen profiel
-    # gekProfiel = Third.Grid.profielen()
-    # print("gekProfiel is %s" % gekProfiel)
+
+    print("gekProfiel is %s" % gekPV)
     # zie README.md
     # gemeenschappelijke vakken         vakGem
     vakGem = ["Ne", "En", "Re", "Ma", "CKV", "Lo", "Gd"]
@@ -374,5 +396,39 @@ def showTwee():
 
 
 def hideDrie():
-    # self.hide()
     twee.Drie.hide()
+
+
+# restcode
+
+# def profielen(self):
+#
+#     sigma = self.nr_gr_1.checkedId()
+#     if sigma == -1:
+#         print("niks gekozen")
+#         return("niks")
+#     elif sigma == 1:
+#         print("CM gekozen")
+#         return("CM")
+#     elif sigma == 2:
+#         print("EM gekozen")
+#         return("EM")
+#     elif sigma == 3:
+#         print("NG gekozen")
+#         return("NG")
+#     elif sigma == 4:
+#         print("NT gekozen")
+#         return("NT")
+# #def PV (self):
+#
+#     #rho = self.nr_gr_CM
+
+#self.rbCMFa.clicked.connect(lambda: gekozen("PV", "Fa"))
+#self.rbCMDu.clicked.connect(lambda: gekozen("PV", "Du"))
+#self.rbEMWA.clicked.connect(lambda: gekozen("PV", "WA"))
+#self.rbEMWB.clicked.connect(lambda: gekozen("PV", "WB"))
+#self.rbNGWA.clicked.connect(lambda: gekozen("PV", "WA"))
+#self.rbNGWB.clicked.connect(lambda: gekozen("PV", "WB"))
+
+# gekozen profiel
+# gekProfiel = Third.Grid.profielen()
