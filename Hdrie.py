@@ -70,11 +70,11 @@ class Grid(QtGui.QWidget):
 
         self.btnVolgende = QtGui.QPushButton('Volgende', self)
         self.btnVolgende.resize(self.btnVolgende.sizeHint()) # schat grootte knop en pas die toe
-        self.btnVolgende.clicked.connect(hideDrie)
+        self.btnVolgende.clicked.connect(self.hide)
         self.btnVolgende.clicked.connect(showVier)
         self.btnVorige = QtGui.QPushButton('Vorige', self)
         self.btnVorige.resize(self.btnVorige.sizeHint())
-        self.btnVorige.clicked.connect(hideDrie)
+        self.btnVorige.clicked.connect(self.hide)
         self.btnVorige.clicked.connect(showTwee)
 
         grid.addWidget(self.btnVolgende, 11, 0)
@@ -318,7 +318,8 @@ class Grid(QtGui.QWidget):
         grid.addWidget(self.rbNTBi2,10,7)
         self.setLayout(grid)
         self.show()
-        self.btnVolgende.clicked.connect(self.profielen)
+        self.btnVolgende.clicked.connect(self.hide)
+        self.btnVolgende.clicked.connect(showVier)
 
     # def profielen(self):
     #
@@ -345,16 +346,25 @@ class Grid(QtGui.QWidget):
 
 def gekozen(soort, antw):
     if soort == "PV":
-        exec("global gekPV")
+        global gekPV
         gekPV = antw
+        print(gekPV)
+    elif soort == "PKV":
+        if gekPV == "CM":   #pretpakketters mogen er 2 kiezen
+            if gekPKV2:
+                pass    #je mag er maar 2
+            elif gekPKV1:
+                global gekPKV2
+                gekPKV2 = antw
+                print(gekPKV2)
+        else:
+            global gekPKV1
+            gekPKV1 = antw
+            print(gekPKV1)
 
 
 def showVier():
-    # gekozen profiel
-    # gekProfiel = Third.Grid.profielen()
-    # print("gekProfiel is %s" % gekProfiel)
-    # zie README.md
-    # gemeenschappelijke vakken         vakGem
+    # zie Readme.md
     vakGem = ["Ne", "En", "Re", "Ma", "CKV", "Lo", "Gd"]
     # profielvakken                     vakPV
     #vakPV  =
@@ -370,9 +380,3 @@ def showTwee():
     Twee = venster()
     while Twee:
         lol
-
-
-
-def hideDrie():
-    # self.hide()
-    twee.Drie.hide()
