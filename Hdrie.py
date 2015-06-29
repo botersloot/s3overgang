@@ -12,6 +12,13 @@ from PyQt4  import QtCore
 resx = 600
 resy = 400
 
+global gekPF
+global gekVKV
+gekVKV = []
+global gekPV
+global gekPKV2
+global gekPKV1
+
 class Third(QtGui.QMainWindow):
     def __init__(self):
         super(Third, self).__init__()
@@ -38,11 +45,7 @@ class Third(QtGui.QMainWindow):
         # nu is het venster klaar in geheugen, projecteer naar scherm
         # pas op het laatst doen natuurlijk
 
-        global gekVKV
-        gekVKV = []
-        global gekPV
-        global gekPKV2
-        global gekPKV1
+
 
         self.show()
     def center(self):
@@ -326,6 +329,60 @@ class Grid(QtGui.QWidget):
         grid.addWidget(self.rbNTBi2,10,7)
         self.setLayout(grid)
         self.show()
+<<<<<<< HEAD
+=======
+        self.btnVolgende.clicked.connect(self.hide)
+        self.btnVolgende.clicked.connect(showVier)
+
+    # def profielen(self):
+    #
+    #     sigma = self.nr_gr_1.checkedId()
+    #     if sigma == -1:
+    #         print("niks gekozen")
+    #         return("niks")
+    #     elif sigma == 1:
+    #         print("CM gekozen")
+    #         return("CM")
+    #     elif sigma == 2:
+    #         print("EM gekozen")
+    #         return("EM")
+    #     elif sigma == 3:
+    #         print("NG gekozen")
+    #         return("NG")
+    #     elif sigma == 4:
+    #         print("NT gekozen")
+    #         return("NT")
+    # #def PV (self):
+    #
+    #     #rho = self.nr_gr_CM
+
+
+def gekozen(soort, antw):
+    if soort == "PF":
+        gekPF = antw
+        print(gekPF)
+    elif soort == "PV":
+        gekPV = antw
+        print(gekPV)
+    elif soort == "PKV":
+        if gekPV == "CM":   #pretpakketters mogen er 2 kiezen
+            if gekPKV2:
+                print("je mag er maar 2")
+            elif gekPKV1:
+                gekPKV2 = antw
+                print(gekPKV2)
+        else:
+            gekPKV1 = antw
+            print(gekPKV1)
+    elif soort == "VKV":
+        if antw in gekVKV:
+            gekVKV.pop(antw)
+            print(antw + " verwijderd")
+        else:
+            gekVKV.append(antw)
+            print(antw + " toegevoegd")
+
+>>>>>>> origin/master
 
 
 def showVier():
