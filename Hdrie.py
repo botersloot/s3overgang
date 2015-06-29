@@ -378,8 +378,10 @@ def gekozen(soort, antw):
     elif soort == "VKV":
         if antw in gekVKV:
             gekVKV.pop(antw)
+            print(antw + " verwijderd")
         else:
             gekVKV.append(antw)
+            print(antw + " toegevoegd")
 
 
 
