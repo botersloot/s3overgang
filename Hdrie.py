@@ -246,6 +246,15 @@ class Grid(QtGui.QWidget):
         self.rbCMFa2.clicked.connect(lambda: gekozen("PKV", "Fa"))
         self.rbCMDu2.clicked.connect(lambda: gekozen("PKV", "Du"))
         self.rbCMTe.clicked.connect(lambda: gekozen("PKV", "Te"))
+        self.rbEMDu.clicked.connect(lambda: gekozen("PKV", "Du"))
+        self.rbEMFa.clicked.connect(lambda: gekozen("PKV", "Fa"))
+        self.rbEMAk.clicked.connect(lambda: gekozen("PKV", "Ak"))
+        self.rbEMMO.clicked.connect(lambda: gekozen("PKV", "MO"))
+        self.rbNGAk.clicked.connect(lambda: gekozen("PKV", "Ak"))
+        self.rbNGNa.clicked.connect(lambda: gekozen("PKV", "Na"))
+        self.rbNTBi.clicked.connect(lambda: gekozen("PKV", "Bi"))
+        self.rbNTIn.clicked.connect(lambda: gekozen("PKV", "In"))
+
         # self.rbEM.clicked.connect()
 
 
@@ -345,6 +354,11 @@ class Grid(QtGui.QWidget):
 
 
 def gekozen(soort, antw):
+    if not Geweest:
+        global gekVKV
+        gekVKV = []
+        global Geweest
+        Geweest = True
     if soort == "PV":
         global gekPV
         gekPV = antw
@@ -361,6 +375,12 @@ def gekozen(soort, antw):
             global gekPKV1
             gekPKV1 = antw
             print(gekPKV1)
+    elif soort == "VKV":
+        if antw in gekVKV:
+            gekVKV.pop(antw)
+        else:
+            gekVKV.append(antw)
+
 
 
 def showVier():
