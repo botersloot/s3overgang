@@ -12,6 +12,13 @@ from PyQt4  import QtCore
 resx = 600
 resy = 400
 
+global gekPF
+global gekVKV
+gekVKV = []
+global gekPV
+global gekPKV2
+global gekPKV1
+
 class Third(QtGui.QMainWindow):
     def __init__(self):
         super(Third, self).__init__()
@@ -38,11 +45,7 @@ class Third(QtGui.QMainWindow):
         # nu is het venster klaar in geheugen, projecteer naar scherm
         # pas op het laatst doen natuurlijk
 
-        global gekVKV
-        gekVKV = []
-        global gekPV
-        global gekPKV2
-        global gekPKV1
+
 
         self.show()
     def center(self):
@@ -356,13 +359,16 @@ class Grid(QtGui.QWidget):
 
 
 def gekozen(soort, antw):
-    if soort == "PV":
+    if soort == "PF":
+        gekPF = antw
+        print(gekPF)
+    elif soort == "PV":
         gekPV = antw
         print(gekPV)
     elif soort == "PKV":
         if gekPV == "CM":   #pretpakketters mogen er 2 kiezen
             if gekPKV2:
-                pass    #je mag er maar 2
+                print("je mag er maar 2")
             elif gekPKV1:
                 gekPKV2 = antw
                 print(gekPKV2)
