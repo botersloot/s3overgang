@@ -251,7 +251,7 @@ class Grid(QtGui.QWidget):
         self.rbEMDu.clicked.connect(lambda: gekozen("PKV", "Du"))
         self.rbEMFa.clicked.connect(lambda: gekozen("PKV", "Fa"))
         self.rbEMAk.clicked.connect(lambda: gekozen("PKV", "Ak"))
-        self.rbEMMO.clicked.connect(lambda: gekozen("PKV", "MO"))
+        self.rbEMMo.clicked.connect(lambda: gekozen("PKV", "MO"))
         self.rbNGAk.clicked.connect(lambda: gekozen("PKV", "Ak"))
         self.rbNGNa.clicked.connect(lambda: gekozen("PKV", "Na"))
         self.rbNTBi.clicked.connect(lambda: gekozen("PKV", "Bi"))
