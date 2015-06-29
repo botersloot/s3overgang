@@ -113,8 +113,7 @@ class venster(QtGui.QMainWindow):
         # print('imported, showing Drie')
         global Drie
         Drie = Third()
-        while Drie:
-            lol
+
 
     def hideTwee(self):
         self.hide()

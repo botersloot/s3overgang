@@ -72,11 +72,11 @@ class Grid(QtGui.QWidget):
 
         self.btnVolgende = QtGui.QPushButton('Volgende', self)
         self.btnVolgende.resize(self.btnVolgende.sizeHint()) # schat grootte knop en pas die toe
-        self.btnVolgende.clicked.connect(self.hide)
+        self.btnVolgende.clicked.connect(hideDrie)
         self.btnVolgende.clicked.connect(showVier)
         self.btnVorige = QtGui.QPushButton('Vorige', self)
         self.btnVorige.resize(self.btnVorige.sizeHint())
-        self.btnVorige.clicked.connect(self.hide)
+        self.btnVorige.clicked.connect(hideDrie)
         self.btnVorige.clicked.connect(showTwee)
 
         grid.addWidget(self.btnVolgende, 11, 0)
@@ -128,24 +128,21 @@ class Grid(QtGui.QWidget):
         self.rbCMDu = QtGui.QRadioButton("Du")
         self.lblCMGs = QtGui.QLabel("Gs")
 
-        #self.rbCMFa.clicked.connect(lambda: gekozen("PV", "Fa"))
-        #self.rbCMDu.clicked.connect(lambda: gekozen("PV", "Du"))
+
             # EM
         self.rbEMWA = QtGui.QRadioButton("WA")
         self.rbEMWB = QtGui.QRadioButton("WB")
         self.lblEMEc = QtGui.QLabel("Ec")
         self.lblEMGs = QtGui.QLabel("Gs")
 
-        #self.rbEMWA.clicked.connect(lambda: gekozen("PV", "WA"))
-        #self.rbEMWB.clicked.connect(lambda: gekozen("PV", "WB"))
+
             # NG
         self.rbNGWA = QtGui.QRadioButton("WA")
         self.rbNGWB = QtGui.QRadioButton("WB")
         self.lblNGBi = QtGui.QLabel("Bi")
         self.lblNGSk = QtGui.QLabel("Sk")
 
-        #self.rbNGWA.clicked.connect(lambda: gekozen("PV", "WA"))
-        #self.rbNGWB.clicked.connect(lambda: gekozen("PV", "WB"))
+
             # NT
         self.lblNTWB = QtGui.QLabel("WB")
         self.lblNTNa = QtGui.QLabel("Na")
@@ -329,70 +326,25 @@ class Grid(QtGui.QWidget):
         grid.addWidget(self.rbNTBi2,10,7)
         self.setLayout(grid)
         self.show()
-        self.btnVolgende.clicked.connect(self.hide)
-        self.btnVolgende.clicked.connect(showVier)
-
-    # def profielen(self):
-    #
-    #     sigma = self.nr_gr_1.checkedId()
-    #     if sigma == -1:
-    #         print("niks gekozen")
-    #         return("niks")
-    #     elif sigma == 1:
-    #         print("CM gekozen")
-    #         return("CM")
-    #     elif sigma == 2:
-    #         print("EM gekozen")
-    #         return("EM")
-    #     elif sigma == 3:
-    #         print("NG gekozen")
-    #         return("NG")
-    #     elif sigma == 4:
-    #         print("NT gekozen")
-    #         return("NT")
-    # #def PV (self):
-    #
-    #     #rho = self.nr_gr_CM
-
-
-def gekozen(soort, antw):
-    if soort == "PV":
-        gekPV = antw
-        print(gekPV)
-    elif soort == "PKV":
-        if gekPV == "CM":   #pretpakketters mogen er 2 kiezen
-            if gekPKV2:
-                pass    #je mag er maar 2
-            elif gekPKV1:
-                gekPKV2 = antw
-                print(gekPKV2)
-        else:
-            gekPKV1 = antw
-            print(gekPKV1)
-    elif soort == "VKV":
-        if antw in gekVKV:
-            gekVKV.pop(antw)
-            print(antw + " verwijderd")
-        else:
-            gekVKV.append(antw)
-            print(antw + " toegevoegd")
-
 
 
 def showVier():
     # zie Readme.md
-    vakGem = ["Ne", "En", "Re", "Ma", "CKV", "Lo", "Gd"]
+    # vakGem = ["Ne", "En", "Re", "Ma", "CKV", "Lo", "Gd"]
     # profielvakken                     vakPV
     #vakPV  =
     from Hvier import Fourth
     print('imported, showing Vier')
+    global Vier
     Vier = Fourth()
-    while Vier:
-        lol
+
 
 def showTwee():
     from twee import venster
     print('imported, showing Twee')
+    global Twee
     Twee = venster()
-    while Twee:
-        lol
+
+def hideDrie(self):
+    print('Third, hidden')
+    twee.Drie.hide()
