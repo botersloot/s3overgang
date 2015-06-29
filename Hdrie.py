@@ -12,9 +12,6 @@ from PyQt4  import QtCore
 resx = 600
 resy = 400
 
-global Geweest
-Geweest = False
-
 class Third(QtGui.QMainWindow):
     def __init__(self):
         super(Third, self).__init__()
@@ -41,8 +38,11 @@ class Third(QtGui.QMainWindow):
         # nu is het venster klaar in geheugen, projecteer naar scherm
         # pas op het laatst doen natuurlijk
 
-
-
+        global gekVKV
+        gekVKV = []
+        global gekPV
+        global gekPKV2
+        global gekPKV1
 
         self.show()
     def center(self):
@@ -356,13 +356,7 @@ class Grid(QtGui.QWidget):
 
 
 def gekozen(soort, antw):
-    if not Geweest:
-        global gekVKV
-        gekVKV = []
-        global Geweest
-        Geweest = True
     if soort == "PV":
-        global gekPV
         gekPV = antw
         print(gekPV)
     elif soort == "PKV":
@@ -370,11 +364,9 @@ def gekozen(soort, antw):
             if gekPKV2:
                 pass    #je mag er maar 2
             elif gekPKV1:
-                global gekPKV2
                 gekPKV2 = antw
                 print(gekPKV2)
         else:
-            global gekPKV1
             gekPKV1 = antw
             print(gekPKV1)
     elif soort == "VKV":
