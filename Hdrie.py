@@ -12,6 +12,8 @@ from PyQt4  import QtCore
 resx = 600
 resy = 400
 
+global Geweest
+Geweest = False
 
 class Third(QtGui.QMainWindow):
     def __init__(self):
