@@ -75,11 +75,11 @@ class Grid(QtGui.QWidget):
 
         self.btnVolgende = QtGui.QPushButton('Volgende', self)
         self.btnVolgende.resize(self.btnVolgende.sizeHint()) # schat grootte knop en pas die toe
-        self.btnVolgende.clicked.connect(hideDrie)
+        self.btnVolgende.clicked.connect(self.hide)
         self.btnVolgende.clicked.connect(showVier)
         self.btnVorige = QtGui.QPushButton('Vorige', self)
         self.btnVorige.resize(self.btnVorige.sizeHint())
-        self.btnVorige.clicked.connect(hideDrie)
+        self.btnVorige.clicked.connect(self.hide)
         self.btnVorige.clicked.connect(showTwee)
 
         grid.addWidget(self.btnVolgende, 11, 0)
@@ -131,21 +131,24 @@ class Grid(QtGui.QWidget):
         self.rbCMDu = QtGui.QRadioButton("Du")
         self.lblCMGs = QtGui.QLabel("Gs")
 
-
+        #self.rbCMFa.clicked.connect(lambda: gekozen("PV", "Fa"))
+        #self.rbCMDu.clicked.connect(lambda: gekozen("PV", "Du"))
             # EM
         self.rbEMWA = QtGui.QRadioButton("WA")
         self.rbEMWB = QtGui.QRadioButton("WB")
         self.lblEMEc = QtGui.QLabel("Ec")
         self.lblEMGs = QtGui.QLabel("Gs")
 
-
+        #self.rbEMWA.clicked.connect(lambda: gekozen("PV", "WA"))
+        #self.rbEMWB.clicked.connect(lambda: gekozen("PV", "WB"))
             # NG
         self.rbNGWA = QtGui.QRadioButton("WA")
         self.rbNGWB = QtGui.QRadioButton("WB")
         self.lblNGBi = QtGui.QLabel("Bi")
         self.lblNGSk = QtGui.QLabel("Sk")
 
-
+        #self.rbNGWA.clicked.connect(lambda: gekozen("PV", "WA"))
+        #self.rbNGWB.clicked.connect(lambda: gekozen("PV", "WB"))
             # NT
         self.lblNTWB = QtGui.QLabel("WB")
         self.lblNTNa = QtGui.QLabel("Na")
@@ -329,8 +332,6 @@ class Grid(QtGui.QWidget):
         grid.addWidget(self.rbNTBi2,10,7)
         self.setLayout(grid)
         self.show()
-<<<<<<< HEAD
-=======
         self.btnVolgende.clicked.connect(self.hide)
         self.btnVolgende.clicked.connect(showVier)
 
@@ -382,26 +383,22 @@ def gekozen(soort, antw):
             gekVKV.append(antw)
             print(antw + " toegevoegd")
 
->>>>>>> origin/master
 
 
 def showVier():
     # zie Readme.md
-    # vakGem = ["Ne", "En", "Re", "Ma", "CKV", "Lo", "Gd"]
+    vakGem = ["Ne", "En", "Re", "Ma", "CKV", "Lo", "Gd"]
     # profielvakken                     vakPV
     #vakPV  =
     from Hvier import Fourth
     print('imported, showing Vier')
-    global Vier
     Vier = Fourth()
-
+    while Vier:
+        lol
 
 def showTwee():
     from twee import venster
     print('imported, showing Twee')
-    global Twee
     Twee = venster()
-
-def hideDrie(self):
-    print('Third, hidden')
-    twee.Drie.hide()
+    while Twee:
+        lol
