@@ -6,6 +6,7 @@
 # let op: importeer enkel het nodige, schoolpc's zijn sceer
 import sys
 import twee
+import Hvier
 from PyQt4 import QtGui
 from PyQt4  import QtCore
 
@@ -16,6 +17,7 @@ global gekPF
 global gekVKV
 gekVKV = []
 global gekPV
+global gekPKV
 global gekPKV2
 global gekPKV1
 
@@ -246,11 +248,11 @@ class Grid(QtGui.QWidget):
         grid.addWidget(self.rbNTIn, 5, 7)
 
 
-        self.rbCMAk.clicked.connect(lambda: gekozen("PKV", "Ak"))
-        self.rbCMEc.clicked.connect(lambda: gekozen("PKV", "Ec"))
-        self.rbCMFa2.clicked.connect(lambda: gekozen("PKV", "Fa"))
-        self.rbCMDu2.clicked.connect(lambda: gekozen("PKV", "Du"))
-        self.rbCMTe.clicked.connect(lambda: gekozen("PKV", "Te"))
+        self.rbCMAk.clicked.connect(lambda: gekozen("PKV1", "Ak"))
+        self.rbCMEc.clicked.connect(lambda: gekozen("PKV1", "Ec"))
+        self.rbCMFa2.clicked.connect(lambda: gekozen("PKV2", "Fa"))
+        self.rbCMDu2.clicked.connect(lambda: gekozen("PKV2", "Du"))
+        self.rbCMTe.clicked.connect(lambda: gekozen("PKV2", "Te"))
         self.rbEMDu.clicked.connect(lambda: gekozen("PKV", "Du"))
         self.rbEMFa.clicked.connect(lambda: gekozen("PKV", "Fa"))
         self.rbEMAk.clicked.connect(lambda: gekozen("PKV", "Ak"))
@@ -316,72 +318,91 @@ class Grid(QtGui.QWidget):
         grid.addWidget(self.rbNGNa2,10,5)
 
             # NT
-        self.rbNTFa2 = QtGui.QCheckBox("Fa")
+        self.rbNTFa = QtGui.QCheckBox("Fa")
         self.rbNTEc = QtGui.QCheckBox("Ec")
-        self.rbNTDu2 = QtGui.QCheckBox("Du")
+        self.rbNTDu = QtGui.QCheckBox("Du")
         self.rbNTTe = QtGui.QCheckBox("Te")
         self.rbNTAk = QtGui.QCheckBox("Ak")
         self.rbNTIn2 = QtGui.QCheckBox("In")
         self.rbNTBi2 = QtGui.QCheckBox("Bi")
-        grid.addWidget(self.rbNTFa2, 7, 7)
+        grid.addWidget(self.rbNTFa, 7, 7)
         grid.addWidget(self.rbNTEc, 7, 8)
-        grid.addWidget(self.rbNTDu2, 8, 7)
+        grid.addWidget(self.rbNTDu, 8, 7)
         grid.addWidget(self.rbNTTe, 8, 8)
         grid.addWidget(self.rbNTAk,9, 7)
         grid.addWidget(self.rbNTIn2, 9, 8)
         grid.addWidget(self.rbNTBi2,10,7)
+
+
+        self.rbCMWA.clicked.connect(lambda: gekozen("VKV", "WA"))
+        self.rbCMTe2.clicked.connect(lambda: gekozen("VKV", "Te"))
+        self.rbCMFa3.clicked.connect(lambda: gekozen("VKV", "Fa"))
+        self.rbCMDu3.clicked.connect(lambda: gekozen("VKV", "Du"))
+        self.rbCMEc2.clicked.connect(lambda: gekozen("VKV", "Ec"))
+        self.rbCMMo.clicked.connect(lambda: gekozen("VKV", "MO"))
+        self.rbCMAk2.clicked.connect(lambda: gekozen("VKV", "Ak"))
+        self.rbCMIn.clicked.connect(lambda: gekozen("VKV", "In"))
+
+        self.rbEMTe.clicked.connect(lambda: gekozen("VKV", "Te"))
+        self.rbEMFa2.clicked.connect(lambda: gekozen("VKV", "Fa"))
+        self.rbEMDu2.clicked.connect(lambda: gekozen("VKV", "Du"))
+        self.rbEMBi.clicked.connect(lambda: gekozen("VKV", "Bi"))
+        self.rbEMMo2.clicked.connect(lambda: gekozen("VKV", "MO"))
+        self.rbEMAk2.clicked.connect(lambda: gekozen("VKV", "Ak"))
+        self.rbEMIn.clicked.connect(lambda: gekozen("VKV", "In"))
+
+        self.rbNGTe.clicked.connect(lambda: gekozen("VKV", "Te"))
+        self.rbNGFa.clicked.connect(lambda: gekozen("VKV", "Fa"))
+        self.rbNGDu.clicked.connect(lambda: gekozen("VKV", "Du"))
+        self.rbNGNa.clicked.connect(lambda: gekozen("VKV", "Na"))
+        self.rbNGEc.clicked.connect(lambda: gekozen("VKV", "Ec"))
+        self.rbNGAk2.clicked.connect(lambda: gekozen("VKV", "Ak"))
+        self.rbNGIn.clicked.connect(lambda: gekozen("VKV", "In"))
+
+        self.rbNTTe.clicked.connect(lambda: gekozen("VKV", "Te"))
+        self.rbNTFa.clicked.connect(lambda: gekozen("VKV", "Fa"))
+        self.rbNTDu.clicked.connect(lambda: gekozen("VKV", "Du"))
+        self.rbNTBi.clicked.connect(lambda: gekozen("VKV", "Bi"))
+        self.rbNTEc.clicked.connect(lambda: gekozen("VKV", "Ec"))
+        self.rbNTAk.clicked.connect(lambda: gekozen("VKV", "Ak"))
+        self.rbNTIn.clicked.connect(lambda: gekozen("VKV", "In"))
+
+
         self.setLayout(grid)
         self.show()
         self.btnVolgende.clicked.connect(self.hide)
         self.btnVolgende.clicked.connect(showVier)
 
-    # def profielen(self):
-    #
-    #     sigma = self.nr_gr_1.checkedId()
-    #     if sigma == -1:
-    #         print("niks gekozen")
-    #         return("niks")
-    #     elif sigma == 1:
-    #         print("CM gekozen")
-    #         return("CM")
-    #     elif sigma == 2:
-    #         print("EM gekozen")
-    #         return("EM")
-    #     elif sigma == 3:
-    #         print("NG gekozen")
-    #         return("NG")
-    #     elif sigma == 4:
-    #         print("NT gekozen")
-    #         return("NT")
-    # #def PV (self):
-    #
-    #     #rho = self.nr_gr_CM
+
+
+
+
 
 
 def gekozen(soort, antw):
     if soort == "PF":
         gekPF = antw
-        print(gekPF)
+        print("Profielkeus:" + gekPF)
     elif soort == "PV":
         gekPV = antw
-        print(gekPV)
+        print("Gekozen profielvak:" + gekPV)
     elif soort == "PKV":
-        if gekPV == "CM":   #pretpakketters mogen er 2 kiezen
-            if gekPKV2:
-                print("je mag er maar 2")
-            elif gekPKV1:
-                gekPKV2 = antw
-                print(gekPKV2)
-        else:
+            gekPKV = antw
+            print("Gekozen profielkeuzevak:" + gekPKV)
+    elif soort == "PKV1":
             gekPKV1 = antw
-            print(gekPKV1)
+            print("Gekozen eerste profielkeuzevak:" + gekPKV1)
+    elif soort == "PKV2":
+            gekPKV2 = antw
+            print("Gekozen tweede profielkeuzevak:" + gekPKV2)
     elif soort == "VKV":
         if antw in gekVKV:
-            gekVKV.pop(antw)
-            print(antw + " verwijderd")
+            gekVKV.remove(antw)
+            print("Extra vak: " + antw + " verwijderd")
         else:
             gekVKV.append(antw)
-            print(antw + " toegevoegd")
+            print("Extra vak: " + antw + " toegevoegd")
+
 
 
 

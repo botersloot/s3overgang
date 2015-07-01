@@ -5,6 +5,7 @@
 
 # let op: importeer enkel het nodige, schoolpc's zijn sceer
 import sys
+import Hdrie
 from PyQt4 import QtGui
 from PyQt4  import QtCore
 
@@ -23,7 +24,7 @@ class Fourth(QtGui.QMainWindow):
         # schat grootte knop en pas die toe
         self.btnBereken.resize(self.btnBereken.sizeHint())
         self.btnBereken.move(450, 350)
-        self.btnBereken.clicked.connect(self.doBereken)
+        self.btnBereken.clicked.connect(self.printavg)
         self.btnVorige = QtGui.QPushButton('Vorige', self)
         self.btnVorige.resize(self.btnVorige.sizeHint())
         self.btnVorige.move(350, 350)
@@ -184,6 +185,26 @@ class Fourth(QtGui.QMainWindow):
 
 
 
+        vak1S = self.qle1.text()
+        vak2S = self.qle2.text()
+        vak3S = self.qle3.text()
+        vak4S = self.qle4.text()
+        vak5S = self.qle5.text()
+        vak6S = self.qle6.text()
+        vak7S = self.qle7.text()
+        vak8S = self.qle8.text()
+        vak9S = self.qle9.text()
+        vak10S = self.qle10.text()
+        vak11S = self.qle11.text()
+        vak12S = self.qle12.text()
+        vak13S = self.qle13.text()
+        vak14S = self.qle14.text()
+        vak15S = self.qle15.text()
+        vak16S = self.qle16.text()
+        global VakkenS
+        VakkenS = [vak1S, vak2S, vak3S, vak4S, vak5S, vak6S,
+        vak7S, vak8S, vak9S, vak10S, vak11S, vak12S, vak13S, vak14S,
+        vak15S, vak16S]
         # maak even menubar
         # een mooie statusbar gewoon omdat het kan
         self.statusBar().showMessage('Gereed')
@@ -211,14 +232,19 @@ class Fourth(QtGui.QMainWindow):
         qr.moveCenter(cp)
         self.move(qr.topLeft())
 
-    def doBereken(self):
-        pass
+    def printavg(self):
+        for i in VakkenS:
+            print i
+
+
 
 def showDrie(self):
     from Hdrie import Third
+    print('imported, showing Drie')
+    global Drie
     Drie = Third()
-    while Drie:
-        lol
+
 
 def hideVier(self):
-    drie.Vier.hide()
+    print('Fourth, hidden')
+    Hdrie.Vier.hide()
