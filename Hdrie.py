@@ -6,6 +6,7 @@
 # let op: importeer enkel het nodige, schoolpc's zijn sceer
 import sys
 import twee
+import Hvier
 from PyQt4 import QtGui
 from PyQt4  import QtCore
 
@@ -16,6 +17,7 @@ global gekPF
 global gekVKV
 gekVKV = []
 global gekPV
+global gekPKV
 global gekPKV2
 global gekPKV1
 
@@ -243,11 +245,11 @@ class Grid(QtGui.QWidget):
         grid.addWidget(self.rbNTIn, 5, 7)
 
 
-        self.rbCMAk.clicked.connect(lambda: gekozen("PKV", "Ak"))
-        self.rbCMEc.clicked.connect(lambda: gekozen("PKV", "Ec"))
-        self.rbCMFa2.clicked.connect(lambda: gekozen("PKV", "Fa"))
-        self.rbCMDu2.clicked.connect(lambda: gekozen("PKV", "Du"))
-        self.rbCMTe.clicked.connect(lambda: gekozen("PKV", "Te"))
+        self.rbCMAk.clicked.connect(lambda: gekozen("PKV1", "Ak"))
+        self.rbCMEc.clicked.connect(lambda: gekozen("PKV1", "Ec"))
+        self.rbCMFa2.clicked.connect(lambda: gekozen("PKV2", "Fa"))
+        self.rbCMDu2.clicked.connect(lambda: gekozen("PKV2", "Du"))
+        self.rbCMTe.clicked.connect(lambda: gekozen("PKV2", "Te"))
         self.rbEMDu.clicked.connect(lambda: gekozen("PKV", "Du"))
         self.rbEMFa.clicked.connect(lambda: gekozen("PKV", "Fa"))
         self.rbEMAk.clicked.connect(lambda: gekozen("PKV", "Ak"))
@@ -369,58 +371,34 @@ class Grid(QtGui.QWidget):
 
 
 
-# <<<<<<< HEAD
-# =======
 
-    # def profielen(self):
-    #
-    #     sigma = self.nr_gr_1.checkedId()
-    #     if sigma == -1:
-    #         print("niks gekozen")
-    #         return("niks")
-    #     elif sigma == 1:
-    #         print("CM gekozen")
-    #         return("CM")
-    #     elif sigma == 2:
-    #         print("EM gekozen")
-    #         return("EM")
-    #     elif sigma == 3:
-    #         print("NG gekozen")
-    #         return("NG")
-    #     elif sigma == 4:
-    #         print("NT gekozen")
-    #         return("NT")
-    # #def PV (self):
-    #
-    #     #rho = self.nr_gr_CM
 
 
 def gekozen(soort, antw):
     if soort == "PF":
         gekPF = antw
-        print(gekPF)
+        print("Profielkeus:" + gekPF)
     elif soort == "PV":
         gekPV = antw
-        print(gekPV)
+        print("Gekozen profielvak:" + gekPV)
     elif soort == "PKV":
-        # # if gekPV == "CM":   #pretpakketters mogen er 2 kiezen
-        # #     if gekPKV2:
-        # #         print("je mag er maar 2")
-        #     elif gekPKV1:
-        #         gekPKV2 = antw
-        #         print(gekPKV2)
-        # else:
+            gekPKV = antw
+            print("Gekozen profielkeuzevak:" + gekPKV)
+    elif soort == "PKV1":
             gekPKV1 = antw
-            print(gekPKV1)
+            print("Gekozen eerste profielkeuzevak:" + gekPKV1)
+    elif soort == "PKV2":
+            gekPKV2 = antw
+            print("Gekozen tweede profielkeuzevak:" + gekPKV2)
     elif soort == "VKV":
-        # if antw in gekVKV:
-        #     gekVKV.pop(antw)
-        #     print(antw + " verwijderd")
-        # else:
+        if antw in gekVKV:
+            gekVKV.remove(antw)
+            print("Extra vak: " + antw + " verwijderd")
+        else:
             gekVKV.append(antw)
-            print(antw + " toegevoegd")
+            print("Extra vak: " + antw + " toegevoegd")
 
-# >>>>>>> origin/master
+
 
 
 def showVier():
