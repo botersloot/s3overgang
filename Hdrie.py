@@ -382,26 +382,26 @@ class Grid(QtGui.QWidget):
 def gekozen(soort, antw):
     if soort == "PF":
         gekPF = antw
-        print("Profielkeus:" + gekPF)
+        print("Profielkeus: " + gekPF)
     elif soort == "PV":
         gekPV = antw
-        print("Gekozen profielvak:" + gekPV)
+        print("Gekozen profielvak: " + gekPV)
     elif soort == "PKV":
             gekPKV = antw
-            print("Gekozen profielkeuzevak:" + gekPKV)
+            print("Gekozen profielkeuzevak: " + gekPKV)
     elif soort == "PKV1":
             gekPKV1 = antw
-            print("Gekozen eerste profielkeuzevak:" + gekPKV1)
+            print("Gekozen eerste profielkeuzevak: " + gekPKV1)
     elif soort == "PKV2":
             gekPKV2 = antw
-            print("Gekozen tweede profielkeuzevak:" + gekPKV2)
+            print("Gekozen tweede profielkeuzevak: " + gekPKV2)
     elif soort == "VKV":
         if antw in gekVKV:
             gekVKV.remove(antw)
-            print("Extra vak: " + antw + " verwijderd")
+            print("Extra vak verwijderd: " + antw + " verwijderd")
         else:
             gekVKV.append(antw)
-            print("Extra vak: " + antw + " toegevoegd")
+            print("Extra vak toegevoegd: " + antw + " toegevoegd")
 
 
 

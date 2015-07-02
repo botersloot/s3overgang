@@ -24,7 +24,8 @@ class Fourth(QtGui.QMainWindow):
         # schat grootte knop en pas die toe
         self.btnBereken.resize(self.btnBereken.sizeHint())
         self.btnBereken.move(450, 350)
-        self.btnBereken.clicked.connect(self.printavg)
+        self.btnBereken.clicked.connect(lambda: self.printavg(VakkenS))
+        self.btnBereken.clicked.connect(berekenen)
         self.btnVorige = QtGui.QPushButton('Vorige', self)
         self.btnVorige.resize(self.btnVorige.sizeHint())
         self.btnVorige.move(350, 350)
@@ -232,10 +233,12 @@ class Fourth(QtGui.QMainWindow):
         qr.moveCenter(cp)
         self.move(qr.topLeft())
 
-    def printavg(self):
+    def printavg(self, VakkenS):
         for i in VakkenS:
             print i
 
+def berekenen():
+    pass
 
 
 def showDrie(self):
