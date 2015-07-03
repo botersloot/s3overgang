@@ -172,6 +172,7 @@ class Fourth(QtGui.QMainWindow):
 
 
 
+<<<<<<< HEAD
         Godsdienst = self.qle1
         Handvaardigheid = self.qle2
         LO = self.qle3
