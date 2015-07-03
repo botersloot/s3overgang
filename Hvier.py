@@ -171,8 +171,6 @@ class Fourth(QtGui.QMainWindow):
         self.qle16.move(430, 240)
 
 
-
-<<<<<<< HEAD
         Godsdienst = self.qle1
         Handvaardigheid = self.qle2
         LO = self.qle3
