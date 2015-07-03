@@ -6,8 +6,8 @@
 # let op: importeer enkel het nodige, schoolpc's zijn sceer
 import sys
 import Hdrie
-from PyQt4 import QtGui
-from PyQt4  import QtCore
+from PyQt4 import *
+
 
 resx = 600
 resy = 400
@@ -17,20 +17,6 @@ class Fourth(QtGui.QMainWindow):
         super(Fourth, self).__init__()
         self.initUI()
     def initUI(self):
-
-        #berekenknop
-        self.btnBereken = QtGui.QPushButton('Bereken', self)
-        self.btnBereken.setToolTip('Berekenen')
-        # schat grootte knop en pas die toe
-        self.btnBereken.resize(self.btnBereken.sizeHint())
-        self.btnBereken.move(450, 350)
-        self.btnBereken.clicked.connect(lambda: self.printavg(VakkenS))
-        self.btnBereken.clicked.connect(berekenen)
-        self.btnVorige = QtGui.QPushButton('Vorige', self)
-        self.btnVorige.resize(self.btnVorige.sizeHint())
-        self.btnVorige.move(350, 350)
-        self.btnVorige.clicked.connect(showDrie)
-        self.btnVorige.clicked.connect(hideVier)
 
         #message
 
@@ -185,28 +171,52 @@ class Fourth(QtGui.QMainWindow):
         self.qle16.move(430, 240)
 
 
+        global Godsdienst
+        Godsdienst = self.qle1
+        Handvaardigheid = self.qle2
+        LO = self.qle3
+        Muziek = self.qle4
+        Nederlands = self.qle5
+        Engels = self.qle6
+        Wiskunde = self.qle7
+        Rekenen = self.qle8
+        Frans = self.qle9
+        Duits = self.qle10
+        Natuurkunde = self.qle11
+        Scheikunde = self.qle12
+        Aardrijkskunde = self.qle13
+        Economie = self.qle14
+        Tekenen = self.qle15
+        Geschiedenis = self.qle16
 
-        Godsdienst = self.qle1.text()
-        Handvaardigheid = self.qle2.text()
-        Lichamelijke opvoeding = self.qle3.text()
-        Muziek = self.qle4.text()
-        Nederlands = self.qle5.text()
-        Engels = self.qle6.text()
-        Wiskunde = self.qle7.text()
-        Rekenen = self.qle8.text()
-        Frans = self.qle9.text()
-        Duits = self.qle10.text()
-        Natuurkunde = self.qle11.text()
-        Scheikunde = self.qle12.text()
-        Aardrijkskunde = self.qle13.text()
-        Economie = self.qle14.text()
-        Tekenen = self.qle15.text()
-        Geschiedenis = self.qle16.text()
-        global VakkenS
-        VakkenS = [Godsdienst, Handvaardigheid, Lichamelijke opvoeding, Muziek,
+        global cijfers
+        global vakken
+        vakken = ['Godsdienst', 'Handvaardigheid', 'LO', 'Muziek',
+        'Nederlands', 'Engels', 'Wiskunde', 'Rekenen', 'Frans', 'Duits', 'Natuurkunde',
+        'Scheikunde', 'Aardrijkskunde', 'Economie',
+        'Tekenen', 'Geschiedenis']
+        cijfers = [Godsdienst, Handvaardigheid, LO, Muziek,
         Nederlands, Engels, Wiskunde, Rekenen, Frans, Duits, Natuurkunde,
         Scheikunde, Aardrijkskunde, Economie,
         Tekenen, Geschiedenis]
+
+
+
+
+        #berekenknop
+        self.btnBereken = QtGui.QPushButton('Bereken', self)
+        self.btnBereken.setToolTip('Berekenen')
+        # schat grootte knop en pas die toe
+        self.btnBereken.resize(self.btnBereken.sizeHint())
+        self.btnBereken.move(450, 350)
+        self.btnBereken.clicked.connect(listCijfer)
+        # self.btnBereken.clicked.connect(hideVier)
+        self.btnVorige = QtGui.QPushButton('Vorige', self)
+        self.btnVorige.resize(self.btnVorige.sizeHint())
+        self.btnVorige.move(350, 350)
+        self.btnVorige.clicked.connect(showDrie)
+        self.btnVorige.clicked.connect(hideVier)
+
         # maak even menubar
         # een mooie statusbar gewoon omdat het kan
         self.statusBar().showMessage('Gereed')
@@ -234,12 +244,23 @@ class Fourth(QtGui.QMainWindow):
         qr.moveCenter(cp)
         self.move(qr.topLeft())
 
-    def printavg(self, VakkenS):
-        for i in VakkenS:
-            print i
+def listCijfer():
+    for i in vakken:
+        print i
+    for x in cijfers:
+        print x.text()
 
-def berekenen():
-    pass
+
+
+
+
+def ShowVijf(self):
+    from Hvijf import Fifth
+    print('imported, showing Fifth')
+    global Vijf
+    Vijf = Fifth()
+
+
 
 
 def showDrie(self):
