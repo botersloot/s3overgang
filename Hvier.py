@@ -171,7 +171,7 @@ class Fourth(QtGui.QMainWindow):
         self.qle16.move(430, 240)
 
 
-        global Godsdienst
+
         Godsdienst = self.qle1
         Handvaardigheid = self.qle2
         LO = self.qle3
@@ -189,18 +189,6 @@ class Fourth(QtGui.QMainWindow):
         Tekenen = self.qle15
         Geschiedenis = self.qle16
 
-        global cijfers
-        global vakken
-        vakken = ['Godsdienst', 'Handvaardigheid', 'LO', 'Muziek',
-        'Nederlands', 'Engels', 'Wiskunde', 'Rekenen', 'Frans', 'Duits', 'Natuurkunde',
-        'Scheikunde', 'Aardrijkskunde', 'Economie',
-        'Tekenen', 'Geschiedenis']
-        cijfers = [Godsdienst, Handvaardigheid, LO, Muziek,
-        Nederlands, Engels, Wiskunde, Rekenen, Frans, Duits, Natuurkunde,
-        Scheikunde, Aardrijkskunde, Economie,
-        Tekenen, Geschiedenis]
-
-
 
 
         #berekenknop
@@ -209,8 +197,8 @@ class Fourth(QtGui.QMainWindow):
         # schat grootte knop en pas die toe
         self.btnBereken.resize(self.btnBereken.sizeHint())
         self.btnBereken.move(450, 350)
-        self.btnBereken.clicked.connect(listCijfer)
-        # self.btnBereken.clicked.connect(hideVier)
+        self.btnBereken.clicked.connect(showVijf)
+        self.btnBereken.clicked.connect(hideVier)
         self.btnVorige = QtGui.QPushButton('Vorige', self)
         self.btnVorige.resize(self.btnVorige.sizeHint())
         self.btnVorige.move(350, 350)
@@ -233,9 +221,19 @@ class Fourth(QtGui.QMainWindow):
         self.center()
         self.setWindowTitle('Overgang SLC')
         self.setWindowIcon(QtGui.QIcon('3.png'))
-        # nu is het venster klaar in geheugen, projecteer naar scherm
-        # pas op het laatst doen natuurlijk
         self.show()
+
+        vakken = ['Godsdienst', 'Handvaardigheid', 'LO', 'Muziek',
+        'Nederlands', 'Engels', 'Wiskunde', 'Rekenen', 'Frans', 'Duits', 'Natuurkunde',
+        'Scheikunde', 'Aardrijkskunde', 'Economie',
+        'Tekenen', 'Geschiedenis']
+        global cijfers
+        cijfers = [Godsdienst, Handvaardigheid, LO, Muziek,
+        Nederlands, Engels, Wiskunde, Rekenen, Frans, Duits, Natuurkunde,
+        Scheikunde, Aardrijkskunde, Economie,
+        Tekenen, Geschiedenis]
+        global cijfers4
+        cijfers4 = [Godsdienst, Handvaardigheid, LO, Muziek]
 
     def center(self):
 
@@ -244,24 +242,12 @@ class Fourth(QtGui.QMainWindow):
         qr.moveCenter(cp)
         self.move(qr.topLeft())
 
-def listCijfer():
-    for i in vakken:
-        print i
-    for x in cijfers:
-        print x.text()
+def showVijf(self):
 
-
-
-
-
-def ShowVijf(self):
     from Hvijf import Fifth
     print('imported, showing Fifth')
     global Vijf
     Vijf = Fifth()
-
-
-
 
 def showDrie(self):
     from Hdrie import Third

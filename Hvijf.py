@@ -12,9 +12,8 @@ class Fifth(QtGui.QMainWindow):
         self.initUI()
 
     def initUI(self):
-        # self.lbl = QtGui.QLabel('Hier kunt u de rapportcijfers voor elk vak specifiek invullen', self)
-        # self.lbl.resize(self.lbl.sizeHint())
-        # self.lbl.move(200, 50)
+        self.lbl = QtGui.QLabel(self)
+        self.lbl.move(200, 50)
         self.statusBar().showMessage('Gereed')
         exitAction = QtGui.QAction('Exit' , self)
         exitAction.setShortcut('Ctrl+Q')
@@ -23,7 +22,6 @@ class Fifth(QtGui.QMainWindow):
         self.btnVorige = QtGui.QPushButton('Vorige', self)
         self.btnVorige.resize(self.btnVorige.sizeHint())
         self.btnVorige.move(350, 350)
-
         self.btnVorige.clicked.connect(hideVijf)
         menubar = self.menuBar()
         fileMenu = menubar.addMenu('&File')
@@ -32,14 +30,20 @@ class Fifth(QtGui.QMainWindow):
         self.center()
         self.setWindowTitle('Overgang SLC')
         self.setWindowIcon(QtGui.QIcon('3.png'))
-        # self.berekening()
+        self.listCijfer()
         self.show()
 
-    # def berekening(self):
-    #     from Hvier import Fourth
-    #     VakkenS = Fourth.VakkenS
-    #     for i in VakkenS:
-    #         print i
+    def listCijfer(self):
+        from Hvier import *
+        cijfersD = [float(i.text()) for i in cijfers4]
+        b = sum(cijfersD)/len(cijfersD)
+        if b < 6.0:
+                self.lbl.setText("Helaas, je blijft zitten")
+
+
+        # for x in cijfers:
+        #     print x.text()
+
     def center(self):
 
         qr = self.frameGeometry()
