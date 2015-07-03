@@ -186,26 +186,27 @@ class Fourth(QtGui.QMainWindow):
 
 
 
-        vak1S = self.qle1.text()
-        vak2S = self.qle2.text()
-        vak3S = self.qle3.text()
-        vak4S = self.qle4.text()
-        vak5S = self.qle5.text()
-        vak6S = self.qle6.text()
-        vak7S = self.qle7.text()
-        vak8S = self.qle8.text()
-        vak9S = self.qle9.text()
-        vak10S = self.qle10.text()
-        vak11S = self.qle11.text()
-        vak12S = self.qle12.text()
-        vak13S = self.qle13.text()
-        vak14S = self.qle14.text()
-        vak15S = self.qle15.text()
-        vak16S = self.qle16.text()
+        Godsdienst = self.qle1.text()
+        Handvaardigheid = self.qle2.text()
+        Lichamelijke opvoeding = self.qle3.text()
+        Muziek = self.qle4.text()
+        Nederlands = self.qle5.text()
+        Engels = self.qle6.text()
+        Wiskunde = self.qle7.text()
+        Rekenen = self.qle8.text()
+        Frans = self.qle9.text()
+        Duits = self.qle10.text()
+        Natuurkunde = self.qle11.text()
+        Scheikunde = self.qle12.text()
+        Aardrijkskunde = self.qle13.text()
+        Economie = self.qle14.text()
+        Tekenen = self.qle15.text()
+        Geschiedenis = self.qle16.text()
         global VakkenS
-        VakkenS = [vak1S, vak2S, vak3S, vak4S, vak5S, vak6S,
-        vak7S, vak8S, vak9S, vak10S, vak11S, vak12S, vak13S, vak14S,
-        vak15S, vak16S]
+        VakkenS = [Godsdienst, Handvaardigheid, Lichamelijke opvoeding, Muziek,
+        Nederlands, Engels, Wiskunde, Rekenen, Frans, Duits, Natuurkunde,
+        Scheikunde, Aardrijkskunde, Economie,
+        Tekenen, Geschiedenis]
         # maak even menubar
         # een mooie statusbar gewoon omdat het kan
         self.statusBar().showMessage('Gereed')

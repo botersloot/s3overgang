@@ -22,6 +22,10 @@ class Fifth(QtGui.QMainWindow):
         self.avglbl.resize(self.lbl.sizeHint())
         self.avglbl.move(200, 50)
 
+def berekening():
+    if
+
+
 def showVier(self):
     from Hvier import Fourth
     print('imported, showing Drie')
