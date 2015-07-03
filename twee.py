@@ -107,10 +107,6 @@ class venster(QtGui.QMainWindow):
         elif sig == 4: # gymnasium
             from Gdrie import Third
             print("gymnasium gekozen")
-
-
-        # from drie import Third
-        # print('imported, showing Drie')
         global Drie
         Drie = Third()
 
