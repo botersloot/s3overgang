@@ -18,20 +18,6 @@ class Fourth(QtGui.QMainWindow):
         self.initUI()
     def initUI(self):
 
-        #berekenknop
-        self.btnBereken = QtGui.QPushButton('Bereken', self)
-        self.btnBereken.setToolTip('Berekenen')
-        # schat grootte knop en pas die toe
-        self.btnBereken.resize(self.btnBereken.sizeHint())
-        self.btnBereken.move(450, 350)
-        self.btnBereken.clicked.connect(lambda: self.printavg(VakkenS))
-        self.btnBereken.clicked.connect(berekenen)
-        self.btnVorige = QtGui.QPushButton('Vorige', self)
-        self.btnVorige.resize(self.btnVorige.sizeHint())
-        self.btnVorige.move(350, 350)
-        self.btnVorige.clicked.connect(showDrie)
-        self.btnVorige.clicked.connect(hideVier)
-
         #message
 
         self.lbl = QtGui.QLabel('Hier kunt u de rapportcijfers voor elk vak specifiek invullen', self)
@@ -206,6 +192,21 @@ class Fourth(QtGui.QMainWindow):
         VakkenS = [vak1S, vak2S, vak3S, vak4S, vak5S, vak6S,
         vak7S, vak8S, vak9S, vak10S, vak11S, vak12S, vak13S, vak14S,
         vak15S, vak16S]
+        
+        #berekenknop
+        self.btnBereken = QtGui.QPushButton('Bereken', self)
+        self.btnBereken.setToolTip('Berekenen')
+        # schat grootte knop en pas die toe
+        self.btnBereken.resize(self.btnBereken.sizeHint())
+        self.btnBereken.move(450, 350)
+        self.btnBereken.clicked.connect(lambda: self.printavg(VakkenS))
+        self.btnBereken.clicked.connect(berekenen)
+        self.btnVorige = QtGui.QPushButton('Vorige', self)
+        self.btnVorige.resize(self.btnVorige.sizeHint())
+        self.btnVorige.move(350, 350)
+        self.btnVorige.clicked.connect(showDrie)
+        self.btnVorige.clicked.connect(hideVier)
+
         # maak even menubar
         # een mooie statusbar gewoon omdat het kan
         self.statusBar().showMessage('Gereed')
