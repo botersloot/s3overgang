@@ -170,7 +170,7 @@ class Fourth(QtGui.QMainWindow):
         self.qle16.resize(self.qle16.sizeHint())
         self.qle16.move(430, 240)
 
-
+        #akjgfhaklsjdfhlajs
 
         vak1S = self.qle1.text()
         vak2S = self.qle2.text()
@@ -192,7 +192,7 @@ class Fourth(QtGui.QMainWindow):
         VakkenS = [vak1S, vak2S, vak3S, vak4S, vak5S, vak6S,
         vak7S, vak8S, vak9S, vak10S, vak11S, vak12S, vak13S, vak14S,
         vak15S, vak16S]
-        
+
         #berekenknop
         self.btnBereken = QtGui.QPushButton('Bereken', self)
         self.btnBereken.setToolTip('Berekenen')
