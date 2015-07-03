@@ -77,11 +77,11 @@ class Grid(QtGui.QWidget):
 
         self.btnVolgende = QtGui.QPushButton('Volgende', self)
         self.btnVolgende.resize(self.btnVolgende.sizeHint()) # schat grootte knop en pas die toe
-        self.btnVolgende.clicked.connect(self.hide)
+        self.btnVolgende.clicked.connect(hideDrie)
         self.btnVolgende.clicked.connect(showVier)
         self.btnVorige = QtGui.QPushButton('Vorige', self)
         self.btnVorige.resize(self.btnVorige.sizeHint())
-        self.btnVorige.clicked.connect(self.hide)
+        self.btnVorige.clicked.connect(hideDrie)
         self.btnVorige.clicked.connect(showTwee)
 
         grid.addWidget(self.btnVolgende, 11, 0)
@@ -370,13 +370,6 @@ class Grid(QtGui.QWidget):
 
         self.setLayout(grid)
         self.show()
-        self.btnVolgende.clicked.connect(self.hide)
-        self.btnVolgende.clicked.connect(showVier)
-
-
-
-
-
 
 
 def gekozen(soort, antw):
@@ -413,13 +406,16 @@ def showVier():
     #vakPV  =
     from Hvier import Fourth
     print('imported, showing Vier')
+    global Vier
     Vier = Fourth()
-    while Vier:
-        lol
+
 
 def showTwee():
     from twee import venster
     print('imported, showing Twee')
+    global Twee
     Twee = venster()
-    while Twee:
-        lol
+
+def hideDrie():
+    print('Third, hidden')
+    twee.Drie.hide()
